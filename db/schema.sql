@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS divers_db;
+CREATE DATABASE divers_db;
