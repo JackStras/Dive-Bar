@@ -26,15 +26,18 @@ It's done when I can input the number of dives I've completed.
 It's done when I can specify gas mixes (Nitrox/Air/TriMix) in my profile.
 It's done when I can list my certification levels, including specialties like DECO, CAVE, NIGHT, OPEN WATER, ADVANCED, etc.
 It's done when I can indicate if I have my underwater photography skills.
+
 Profile Information:
 It's done when my profile displays my username, email, and boat ownership information.
 It's done when my password is securely stored.
 It's done when I can log in using my credentials.
 It's done when I can log out to secure my session.
+
 Profile Explore:
 It's done when I can connect with other divers in my vicinity based on my own search criteria.
 Dive Spots
 It's done when I can log individual dives with details like date, time, location, depth, water conditions, and marine life sightings.
+
 Discover Dive Spots:
 It's done when I can explore dive spots with details such as location coordinates, depth, and dive profile.
 Additional Features
@@ -47,22 +50,25 @@ It's done when I can provide and view information about boat ownership in my pro
   - Email
   - Security Passwords
   - Boat Ownership Information
+
 - **Dive Spots:**
   - Location Coordinates
   - Depth
   - Dive Profile (Max depth, Duration under)
   - Conditions and Wildlife
+
 - **Skill Levels:**
   - Number of Dives
   - Gas Mixes (Nitrox/Air/TriMix)
   - Certification Levels (DECO, CAVE, NIGHT, OPEN WATER, ADVANCED, etc.)
   - Photography Skills
+
 - **Dive Log Data:**
   - Records of individual dives
   - Date and time
   - Location
   - Depth
-  - Water Conditions
+  - Site Conditions
   - Marine Life Sightings
 
 
