@@ -101,6 +101,10 @@ User.init(
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
+        active_O2: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
         active_dm: {
             type: DataTypes.BOOLEAN,
             allowNull: false
