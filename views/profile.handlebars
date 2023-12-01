@@ -1,0 +1,13 @@
+{{#if loggedIn}}
+<section class="user">
+  <img src="/images/{{      }}" alt="{{                  }}">
+  <div class="UserName -details">
+    <h3>{{    }}</h3>
+    <p>By: {{     }}</p>
+    <p>Date and Dive: {{     }}</p>
+  </div>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login first to Date</a>
+{{/if}} 
