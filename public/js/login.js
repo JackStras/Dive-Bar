@@ -1,4 +1,4 @@
-let loginFormHandler = async (event) => {
+let loginDiveFormHandler = async (event) => {
     event.preventDefault();
   
     let email = document.querySelector('#email-login').value.trim();
@@ -18,5 +18,14 @@ let loginFormHandler = async (event) => {
       }
     }
   };
+
+  document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginDiveFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
+
 
   
