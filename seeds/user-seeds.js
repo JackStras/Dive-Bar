@@ -22,7 +22,7 @@ const userData = [
         tech_dive_totals: 0,
         photography: true,
         active_efr: false,
-        active_02: false,
+        active_O2: false,
         active_dm: false,
         active_instructor: false
     },
@@ -31,8 +31,8 @@ const userData = [
         username: 'example_2',
         email: 'diver2@gmail.com',
         password: 'password2',
-        certifications: 'AOWD',
-        gas_mixes: 'Nitrox',
+        certifications: 'AOWD Rescue',
+        gas_mixes: 'Nitrox Air',
         ow_dive_totals: 112,
         deep_dive_totals: 31,
         cave_dive_totals: 0,
@@ -47,12 +47,35 @@ const userData = [
         tech_dive_totals: 0,
         photography: true,
         active_efr: true,
-        active_02: false,
+        active_O2: false,
         active_dm: false,
         active_instructor: false
+    },
+    {
+        id: 3,
+        username: 'example_3',
+        email: 'diver3@gmail.com',
+        password: 'password3',
+        certifications: 'Master Rescue Instructor',
+        gas_mixes: 'Nitrox Air',
+        ow_dive_totals: 200,
+        deep_dive_totals: 80,
+        cave_dive_totals: 3,
+        night_dive_totals: 31,
+        shark_dive_totals: 11,
+        wreck_dive_totals: 22,
+        drift_dive_totals: 80,
+        deco_dive_totals: 4,
+        ice_dive_totals: 1,
+        altitude_dive_totals: 45,
+        drysuit_dive_totals: 8,
+        tech_dive_totals: 14,
+        photography: false,
+        active_efr: true,
+        active_O2: true,
+        active_dm: true,
+        active_instructor: true
     }
 ]
 
-const seedUser = () => User.bulkCreate(userData)
-
-module.exports = seedUser
+module.exports = userData
