@@ -1,7 +1,7 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Threads extends Model { }
+class Threads extends Model {}
 
 Threads.init(
     {
@@ -12,7 +12,7 @@ Threads.init(
             autoIncrement: true,
         },
         comment: {
-            type: Datatypes.STING,
+            type: DataTypes.STRING,
             allowNull: false,
         }
     },
