@@ -19,5 +19,41 @@ body {
   justify-content: flex-start;
   background-color: var(--quinary, #756f6b); 
 }
-  
+
+a {
+    color: var(--tertiary); 
+    text-decoration: none;
+    font-family: cursive; 
+  }
+
+  a:visited {
+    color: var(--secondary);
+  }
+
+  :root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --tertiary: #e74c3c;
+    --quaternary: #ecf0f1;
+    --quinary: #2ecc71;
+    --dark: #1a252b;
+    --light: #ecf0f1;
+    --border-radius: 0.5rem;
+    --font-family: 'Roboto', sans-serif;
+  }
+
+  header {
+    padding: 40px;
+    text-align: center;
+    background: var(--primary);
+    color: var(--light);
+    transition: background 0.3s ease;
+    font-family: var(--font-family);
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
   
