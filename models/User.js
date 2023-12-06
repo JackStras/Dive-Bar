@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt')
-const sequelize = require('../config.connection')
+const sequelize = require('../config/connection')
 
 // create user model
 class User extends Model {
@@ -38,59 +38,57 @@ User.init(
             }
         },
         certifications: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: false,
+            type: DataTypes.STRING,
         },
         gas_mixes: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: false,
+            type: DataTypes.STRING,
         },
         ow_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         deep_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         cave_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         night_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         shark_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         wreck_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         drift_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         deco_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         ice_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         altitude_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         drysuit_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         tech_dive_totals: {
-            type: DataTypes.ARRAY(DataTypes.NUMBER),
+            type: DataTypes.FLOAT,
             allowNull: false,
         },
         photography: {

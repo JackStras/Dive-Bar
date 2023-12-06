@@ -16,8 +16,8 @@ router.get('/', withAuth, async (req, res) => {
 // render matches based on filter preferences
 router.get('/matches', withAuth, async (req, res) => {
     try {
-        // Get all projects and JOIN with user data
-        const userData = await User.findByPk({
+        // Get all profiles that match filter criteria
+        const userData = await User.findAll({
             where: {
                 certifications: req.params.certifications,
                 gas_mixes: req.params.gas_mixes,
@@ -64,8 +64,7 @@ router.get('/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Project }],
+            attributes: { exclude: ['password'] }
         });
 
         const user = userData.get({ plain: true });
