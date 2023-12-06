@@ -45,71 +45,88 @@ User.init(
         },
         ow_dive_totals: {
             type: DataTypes.FLOAT,
-            allowNull: false,
+            allowNull: false, 
+            defaultValue: 0
         },
         deep_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         cave_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         night_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         shark_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         wreck_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         drift_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         deco_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         ice_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         altitude_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         drysuit_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         tech_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
+            defaultValue: 0
         },
         photography: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
         active_efr: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
         active_O2: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
         active_dm: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
         active_instructor: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         }
     },
     {

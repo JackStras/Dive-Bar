@@ -3,6 +3,7 @@ let newDiveFormHandler = async (event) => {
 
     const name = document.querySelector('#profile-name').value.trim();
 
+    // lost
 
     
 
