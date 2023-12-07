@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Threads } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const diverData = await User.findByPk({
             where: {
@@ -16,11 +16,18 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
-        const postData = await Threads.findAll()
+        const postData = await Threads.findAll({
+            where: {
+                user_id: req.params.id
+            },
+            include: [{
+                model: User,
+            }]
+        });
         res.status(200).json(postData);
-    } catch(err) {
+    } catch (err) {
         res.status(500).json(err)
     };
 });
