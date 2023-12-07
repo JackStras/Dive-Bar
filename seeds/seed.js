@@ -1,5 +1,6 @@
 const userData = require('./user-seeds')
-const { User }= require('../models')
+const threadData = require('./thread-seeds')
+const { User, Threads }= require('../models')
 const sequelize = require('../config/connection')
 
 
@@ -10,6 +11,9 @@ const seedDB = async () => {
 
     await User.bulkCreate(userData)
     console.log('USERS SEEDED')
+
+    await Threads.bulkCreate(threadData)
+    console.log('THREADS SEEDED')
 
     process.exit(0)
 }
