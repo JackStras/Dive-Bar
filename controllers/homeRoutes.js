@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
     try {
         res.render('homepage', {
-            logged_in: true
+            loggedIn: true
         });
     } catch (err) {
         res.status(500).json(err);
@@ -16,8 +16,8 @@ router.get('/', withAuth, async (req, res) => {
 // render matches based on filter preferences
 router.get('/matches', withAuth, async (req, res) => {
     try {
-        // Get all profiles that match filter criteria
-        const userData = await User.findAll({
+        // Get all projects and JOIN with user data
+        const userData = await User.findByPk({
             where: {
                 certifications: req.params.certifications,
                 gas_mixes: req.params.gas_mixes,
@@ -52,7 +52,7 @@ router.get('/matches', withAuth, async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('matches', {
             users,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -64,7 +64,7 @@ router.get('/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] }
+            attributes: { exclude: ['password'] },
         });
 
         const user = userData.get({ plain: true });
@@ -78,10 +78,27 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
+router.get('/homepage', withAuth, async (req,res) => {
+    try {
+        const homeData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+        });
+
+        const home = homeData.get({ plain: true });
+
+        res.render('homepage', {
+            ... home,
+            loggedIn: true
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    };
+})
+
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-        res.redirect('/');
+    if (req.session.loggedIn) {
+        res.redirect('homepage');
         return;
     }
 
