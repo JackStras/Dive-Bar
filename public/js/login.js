@@ -33,26 +33,22 @@ let signupDiveFormHandler = async (event) => {
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-      document.location.replace('/profile')
+      if (response.ok) {
+        console.log('RESPONSE OK')
+        document.location.replace('/profile');
+      } else {
+        alert(response.statusText)
+      }
     } catch (err) {
       console.log(err.message)
     }
-
-    //   if (response.ok) {
-    //     document.location.replace('/profile');
-    //   } else {
-    //     alert(response.statusText);
-    //   }
-    // }
-  };
-
-
+  }
 };
 
 document
-.querySelector('.login-form')
-.addEventListener('submit', loginDiveFormHandler);
+  .querySelector('.login-form')
+  .addEventListener('submit', loginDiveFormHandler);
 
 document
-.querySelector('.signup-form')
-.addEventListener('submit', signupDiveFormHandler);
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupDiveFormHandler);
