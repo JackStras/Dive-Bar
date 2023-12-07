@@ -3,12 +3,12 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // redner homepage if signed in
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.render('homepage', {
-            loggedIn: true
         });
     } catch (err) {
+        console.log(err.message)
         res.status(500).json(err);
     }
 });
@@ -17,7 +17,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/matches', withAuth, async (req, res) => {
     try {
         // Get all projects and JOIN with user data
-        const userData = await User.findByPk({
+        const userData = await User.findAll({
             where: {
                 certifications: req.params.certifications,
                 gas_mixes: req.params.gas_mixes,
@@ -78,27 +78,10 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-router.get('/homepage', withAuth, async (req,res) => {
-    try {
-        const homeData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-        });
-
-        const home = homeData.get({ plain: true });
-
-        res.render('homepage', {
-            ... home,
-            loggedIn: true
-        });
-    } catch (err) {
-        res.status(500).json(err)
-    };
-})
-
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.loggedIn) {
-        res.redirect('homepage');
+        res.redirect('/profile');
         return;
     }
 
