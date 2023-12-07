@@ -1,8 +1,39 @@
+<div class="UserName">  
 {{#if loggedIn}}
 <section class="user">
- {{!-- <img src="/images/{{   }}" alt="{{                  }}"> --}}
+<h2>Welcome, {{name}}!</h2>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Date and Dive:</h3>
+
+
+  <form class="Find-your-Date">
+      <div class="form-group">
+        <label for="DiveDates">profile name:</label>
+        <input class="form-input" type="text" id="DiveDates" name="DiveDates" />
+      </div>
+
+  <div class="form-group">
+        <label for="find-dates">dates needed ($):</label>
+        <input class="form-input" type="number" id="project-dating" name="project-dating" />
+      </div>
+
+ <div class="form-group">
+        <label for="date-type">description:</label>
+        <textarea class="form-input" id="date-type" name="date-type"></textarea>
+      </div>
+
+  <div class="form-group">
+        <button type="submit" class="btn btn-primary">Get Date</button>
+      </div>
+    </form>
+  </div>
+
+{{!-- 
   <div class="UserName -details">
-    <h3>Title Goes Here</h3>
+    <h3> {{{"Title Goes Here"}}} </h3>
     <p>By:UserName Goes Here</p>
     <p>Date and Dive: Dates goes here </p>
   </div>
@@ -10,4 +41,9 @@
 <!-- Otherwise, provide a link to login -->
 {{else}}
 <a href="/login">You must login first to Date</a>
-{{/if}} 
+{{/if}}  --}}
+
+
+
+
+<script src="./js/profile.js"></script>
