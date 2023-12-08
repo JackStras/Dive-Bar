@@ -5,56 +5,51 @@ const withAuth = require('../../utils/auth');
 
 router.get('/matching', async (req, res) => {
     try {
-        console.log(123)
+        console.log(req.query)
         // Get all divers that match search criteria
         const userData = await User.findAll({
             where: {
                 id: {
-                    [Op.ne]: req.session.user_id
+                    [Op.ne]: req.query.user_id
                 },
-                certifications: 'OWD',
-                gas_mixes: req.body.gas_mixes,
+                certifications: {
+                    [Op.substring]: req.query.certifications,
+                },
+                gas_mixes: {
+                    [Op.substring]: req.query.gas_mixes,
+                },
                 ow_dive_totals: {
-                    [Op.gte]: req.body.ow_dive_total
+                    [Op.gte]: parseInt(req.query.ow_dive_totals)
                 },
                 deep_dive_totals: {
-                    [Op.gte]: req.body.deep_dive_totals
+                    [Op.gte]: parseInt(req.query.deep_dive_totals)
                 },
                 cave_dive_totals: {
-                    [Op.gte]: req.body.cave_dive_totals
+                    [Op.gte]: parseInt(req.query.cave_dive_totals)
                 },
                 night_dive_totals: {
-                    [Op.gte]: req.body.night_dive_totals
+                    [Op.gte]: parseInt(req.query.night_dive_totals)
                 },
                 shark_dive_totals: {
-                    [Op.gte]: req.body.shark_dive_totals
+                    [Op.gte]: parseInt(req.query.shark_dive_totals)
                 },
                 wreck_dive_totals: {
-                    [Op.gte]: req.body.wreck_dive_totals
+                    [Op.gte]: parseInt(req.query.wreck_dive_totals)
                 },
                 drift_dive_totals: {
-                    [Op.gte]: req.body.drift_dive_totals
-                },
-                deco_dive_totals: {
-                    [Op.gte]: req.body.deco_dive_totals
-                },
-                ice_dive_totals: {
-                    [Op.gte]: req.body.ice_dive_totals
+                    [Op.gte]: parseInt(req.query.drift_dive_totals)
                 },
                 altitude_dive_totals: {
-                    [Op.gte]: req.body.altitude_dive_totals
-                },
-                drysuit_dive_totals: {
-                    [Op.gte]: req.body.drysuit_dive_totals
+                    [Op.gte]: parseInt(parseIntreq.query.altitude_dive_totals)
                 },
                 tech_dive_totals: {
-                    [Op.gte]: req.body.tech_dive_totals
+                    [Op.gte]: parseInt(req.query.tech_dive_totals)
                 },
-                photography: req.body.photography,
-                active_efr: req.body.active_efr,
-                active_02: req.body.active_02,
-                active_dm: req.body.active_dm,
-                active_instructor: req.body.active_instructor,
+                photography: req.query.photography,
+                active_efr: req.query.active_efr,
+                active_02: req.query.active_02,
+                active_dm: req.query.active_dm,
+                active_instructor: req.query.active_instructor,
             },
         },
         );
