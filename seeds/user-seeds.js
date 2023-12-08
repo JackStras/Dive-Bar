@@ -2,7 +2,6 @@ const { User } = require('../models')
 
 const userData = [
     {
-        id: 1,
         username: 'example_1',
         email: 'diver1@gmail.com',
         password: 'password',
@@ -15,10 +14,7 @@ const userData = [
         shark_dive_totals: 3,
         wreck_dive_totals: 0,
         drift_dive_totals: 13,
-        deco_dive_totals: 0,
-        ice_dive_totals: 0,
         altitude_dive_totals: 0,
-        drysuit_dive_totals: 0,
         tech_dive_totals: 0,
         photography: true,
         active_efr: false,
@@ -27,7 +23,6 @@ const userData = [
         active_instructor: false
     },
     {
-        id: 2,
         username: 'example_2',
         email: 'diver2@gmail.com',
         password: 'password2',
@@ -40,10 +35,7 @@ const userData = [
         shark_dive_totals: 6,
         wreck_dive_totals: 4,
         drift_dive_totals: 41,
-        deco_dive_totals: 0,
-        ice_dive_totals: 0,
         altitude_dive_totals: 1,
-        drysuit_dive_totals: 0,
         tech_dive_totals: 0,
         photography: true,
         active_efr: true,
@@ -52,11 +44,10 @@ const userData = [
         active_instructor: false
     },
     {
-        id: 3,
         username: 'example_3',
         email: 'diver3@gmail.com',
         password: 'password3',
-        certifications: 'Master Rescue Instructor',
+        certifications: 'OWD AOWD Master Rescue Instructor',
         gas_mixes: 'Nitrox Air',
         ow_dive_totals: 200,
         deep_dive_totals: 80,
@@ -65,10 +56,7 @@ const userData = [
         shark_dive_totals: 11,
         wreck_dive_totals: 22,
         drift_dive_totals: 80,
-        deco_dive_totals: 4,
-        ice_dive_totals: 1,
         altitude_dive_totals: 45,
-        drysuit_dive_totals: 8,
         tech_dive_totals: 14,
         photography: false,
         active_efr: true,

@@ -78,22 +78,7 @@ User.init(
             allowNull: false,
             defaultValue: 0
         },
-        deco_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        ice_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
         altitude_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        drysuit_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false,
             defaultValue: 0
