@@ -3,29 +3,31 @@ let loginDiveFormHandler = async (event) => {
 
   let email = document.querySelector('#email-login').value.trim();
   let password = document.querySelector('#password-login').value.trim();
-
+console.log(123)
   if (email && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+console.log(123)
     if (response.ok) {
-      document.location.replace('/');
+      console.log(123)
+      document.location.replace('/profile');
     } else {
       alert('You did not login');
     }
   }
 };
 
-  let signupDiveFormHandler = async (event) => {
-    event.preventDefault();
-  
+let signupDiveFormHandler = async (event) => {
+  event.preventDefault();
+  console.log(123)
+  try {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-  
+
     if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -38,10 +40,11 @@ let loginDiveFormHandler = async (event) => {
       } else {
         alert(response.statusText)
       }
-    } catch (err) {
-      console.log(err.message)
     }
+  } catch (err) {
+    console.log(err.message)
   }
+
 };
 
 document
