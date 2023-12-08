@@ -43,3 +43,13 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
+
+router.get('/search', async (req,res) => {
+    try {
+        if (req.session.loggedIn) {
+            res.render('search')
+        };
+    } catch (err) {
+        res.status(500).json(500)
+    };
+});
