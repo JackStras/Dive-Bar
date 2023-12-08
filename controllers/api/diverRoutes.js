@@ -3,7 +3,7 @@ const { User, Threads } = require('../../models');
 const { Op } = require('sequelize')
 const withAuth = require('../../utils/auth');
 
-router.get('/matching', async (req, res) => {
+router.get('/matching', withAuth async (req, res) => {
     try {
         console.log(req.query)
         // Get all divers that match search criteria
@@ -60,7 +60,7 @@ router.get('/matching', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.params.id, {
             include: [{ model: Threads }]
@@ -73,7 +73,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         console.log(123)
         const threadData = await Threads.create(req.body);
