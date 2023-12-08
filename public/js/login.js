@@ -31,11 +31,14 @@ let signupDiveFormHandler = async (event) => {
         body: JSON.stringify({ username, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
+      if (password.length < 8) {
+        alert("Password must be at least 8 characters!")
+      }
       if (response.ok) {
         console.log('RESPONSE OK')
         document.location.replace('/profile');
       } else {
-        alert(response.statusText)
+        alert("Username or Email already exists. Please try another Username and/or Email.")
       }
     }
   } catch (err) {
