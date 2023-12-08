@@ -5,8 +5,7 @@ const withAuth = require('../utils/auth');
 // redner homepage if signed in
 router.get('/', async (req, res) => {
     try {
-        res.render('homepage', {
-        });
+        res.render('homepage');
     } catch (err) {
         console.log(err.message)
         res.status(500).json(err);

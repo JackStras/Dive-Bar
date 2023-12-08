@@ -38,11 +38,8 @@ let loginDiveFormHandler = async (event) => {
       } else {
         alert(response.statusText)
       }
-    } catch (err) {
-      console.log(err.message)
     }
-  }
-};
+  };
 
 document
   .querySelector('.login-form')
