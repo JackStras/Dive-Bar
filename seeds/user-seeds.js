@@ -2,7 +2,6 @@ const { User } = require('../models')
 
 const userData = [
     {
-        id: 1,
         username: 'example_1',
         email: 'diver1@gmail.com',
         password: 'password',
@@ -24,7 +23,6 @@ const userData = [
         active_instructor: false
     },
     {
-        id: 2,
         username: 'example_2',
         email: 'diver2@gmail.com',
         password: 'password2',
@@ -46,7 +44,6 @@ const userData = [
         active_instructor: false
     },
     {
-        id: 3,
         username: 'example_3',
         email: 'diver3@gmail.com',
         password: 'password3',
