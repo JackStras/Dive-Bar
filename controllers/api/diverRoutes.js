@@ -3,7 +3,7 @@ const { User, Threads } = require('../../models');
 const { Op } = require('sequelize')
 const withAuth = require('../../utils/auth');
 
-router.get('/matching', withAuth async (req, res) => {
+router.get('/matching', withAuth, async (req, res) => {
     try {
         console.log(req.query)
         // Get all divers that match search criteria
