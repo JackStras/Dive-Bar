@@ -60,4 +60,38 @@ router.post('/logout', (req, res) => {
     }
 });
 
+router.put('/:id', async (req, res) => {
+    try {
+        await User.update(
+            {
+                certifications: req.body.certificationsVal,
+                gas_mixes: req.body.gas_mixesVal,
+                ow_dive_totals: req.body.ow_dive_totalsVal,
+                deep_dive_totals: req.body.deep_dive_totalsVal,
+                cave_dive_totals: req.body.cave_dive_totalsVal,
+                night_dive_totals: req.body.night_dive_totalsVal,
+                shark_dive_totals: req.body.shark_dive_totalsVal,
+                wreck_dive_totals: req.body.wreck_dive_totalsVal,
+                drift_dive_totals: req.body.drift_dive_totalsVal,
+                altitude_dive_totals: req.body.altitude_dive_totalsVal,
+                tech_dive_totals: req.body.tech_dive_totalsVal,
+                photography: req.body.photographyVal,
+                active_efr: req.body.active_efrVal,
+                active_O2: req.body.active_O2Val,
+                active_dm: req.body.active_dmVal,
+                active_instructor: req.body.active_instructorVal
+            },
+            {
+                where: req.params.id
+            }
+        );
+        res.json('successfully updated user');
+    } catch(err) {
+        res.status(500).json(err)
+    }
+
+
+
+})
+
 module.exports = router;
