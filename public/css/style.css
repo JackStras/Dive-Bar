@@ -166,62 +166,98 @@ a:hover {
   color: #004D40; /* Dark 
 
 
-/* :root {
-    --primary: #4a6b63;    
-    --secondary: #7a8b87;  
-    --tertiary: #638b83;   
-    --quatrinary: #756f6b; 
-    --light: #f0f1f0;      
-    --dark: #1f352c;       
-    --error: rgb(228, 46, 1);
-    --border-radius: 0.3rem;
-  }
+/* This is the code for the sign up and log in page for Dive bar */
 
 
-body {
-  font-family: Arial, Helvetica, sans-serif;   /*'Pacifico', cursive;  
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background-color: var(--quinary, #756f6b); 
-}
+/* 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dive Bar Sign Up/Login</title>
+    <style>
+        body {
+            background-image:Project 2 Social /BG2.png ; 
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-a {
-    color: var(--tertiary); 
-    text-decoration: none;
-    font-family: cursive; 
-  }
+        .form-container {
+            background-color: tan; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            margin: 0 20px;
+        }
 
-  a:visited {
-    color: var(--secondary);
-  }
+        h1 {
+            color: #0099cc; 
+        }
 
-  :root {
-    --primary: #2c3e50;
-    --secondary: #3498db;
-    --tertiary: #e74c3c;
-    --quaternary: #ecf0f1;
-    --quinary: #2ecc71;
-    --dark: #1a252b;
-    --light: #ecf0f1;
-    --border-radius: 0.5rem;
-    --font-family: 'Roboto', sans-serif;
-  }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
 
-  header {
-    padding: 40px;
-    text-align: center;
-    background: var(--primary);
-    color: var(--light);
-    transition: background 0.3s ease;
-    font-family: var(--font-family);
-  }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-  }
-   */
+        button {
+            background-color: #0099cc; 
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007399; 
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Dive Bar Sign Up</h1>
+        <form action="#" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Re-enter Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h1>Dive Bar Login</h1>
+        <form action="#" method="post">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="login-username" required>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="login-password" required>
+
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+</body>
+</html> -->*/
