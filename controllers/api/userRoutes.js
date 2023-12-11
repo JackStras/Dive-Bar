@@ -60,11 +60,8 @@ router.post('/logout', (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        const userData = await User.update(req.body,
+        const userData = await User.update(
             {
-                where: {
-                    id: req.params.id
-                },
                 certifications: req.body.certificationsVal,
                 gas_mixes: req.body.gas_mixesVal,
                 ow_dive_totals: req.body.ow_dive_totalsVal,
@@ -82,14 +79,19 @@ router.put('/:id', async (req, res) => {
                 active_dm: req.body.active_dmVal,
                 active_instructor: req.body.active_instructorVal
             },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
         );
+
         res.status(200).json(userData);
-    } catch(err) {
-        res.status(500).json(err)
+        console.log(userData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
     }
-
-
-
-})
+});
 
 module.exports = router;
