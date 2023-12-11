@@ -42,8 +42,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-module.exports = router;
-
 router.get('/search', async (req,res) => {
     try {
         if (req.session.loggedIn) {
@@ -53,3 +51,24 @@ router.get('/search', async (req,res) => {
         res.status(500).json(500)
     };
 });
+
+router.get('/edit', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] }
+        })
+
+        const user = userData.get({ plain: true })
+
+        if (req.session.loggedIn) {
+            res.render('edit', {
+                ...user,
+                loggedIn: true
+            })
+        }
+    } catch (err) {
+        res.status(500).json(500)
+    }
+})
+
+module.exports = router;
