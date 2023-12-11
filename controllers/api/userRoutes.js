@@ -62,8 +62,11 @@ router.post('/logout', (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        await User.update(
+        const userData = await User.update(req.body,
             {
+                where: {
+                    id: req.params.id
+                },
                 certifications: req.body.certificationsVal,
                 gas_mixes: req.body.gas_mixesVal,
                 ow_dive_totals: req.body.ow_dive_totalsVal,
@@ -81,11 +84,8 @@ router.put('/:id', async (req, res) => {
                 active_dm: req.body.active_dmVal,
                 active_instructor: req.body.active_instructorVal
             },
-            {
-                where: req.params.id
-            }
         );
-        res.json('successfully updated user');
+        res.status(200).json(userData);
     } catch(err) {
         res.status(500).json(err)
     }
