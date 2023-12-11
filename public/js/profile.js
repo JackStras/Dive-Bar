@@ -24,11 +24,11 @@ let newDiveFormHandler = async (event) => {
       };
       
 
-      document
-      .querySelector('Find-your-Date')
-      .addEventListener('submit', newDiveFormHandler);
+      // document
+      // .querySelector('Find-your-Date')
+      // .addEventListener('submit', newDiveFormHandler);
 
-      document
-  .querySelector('project-list')
-  .addEventListener('click');
+  //     document
+  // .querySelector('project-list')
+  // .addEventListener('click');
 
