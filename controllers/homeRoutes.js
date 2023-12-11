@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
         res.render('homepage', {
         });
     } catch (err) {
-        console.log(err.message)
         res.status(500).json(err);
     };
 });
@@ -41,5 +40,34 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
+router.get('/search', async (req,res) => {
+    try {
+        if (req.session.loggedIn) {
+            res.render('search')
+        };
+    } catch (err) {
+        res.status(500).json(500)
+    };
+});
+
+router.get('/edit', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] }
+        })
+
+        const user = userData.get({ plain: true })
+
+        if (req.session.loggedIn) {
+            res.render('edit', {
+                ...user,
+                loggedIn: true
+            })
+        }
+    } catch (err) {
+        res.status(500).json(500)
+    }
+})
 
 module.exports = router;
