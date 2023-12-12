@@ -1,5 +1,3 @@
-const { User } = require('../../models')
-
 let matchingFormHandler = async (event) => {
     event.preventDefault()
 
@@ -14,7 +12,7 @@ let matchingFormHandler = async (event) => {
 
 
     // can change this later
-    const userId = document.getElementById('paragraph').dataset.userId
+    const userId = document.getElementById('paragraph').dataset.userid
 
     const data = {
         certificationsVal,
@@ -27,7 +25,7 @@ let matchingFormHandler = async (event) => {
         active_instructorVal
     }
 
-    const response = await fetch(`/api/users/${userId}`, {
+    const response = await fetch(`/api/users/`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json"
