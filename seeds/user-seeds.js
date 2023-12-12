@@ -28,7 +28,7 @@ const userData = [
         password: 'password2',
         certifications: 'AOWD Rescue',
         gas_mixes: 'Nitrox Air',
-        ow_dive_totals: '112',
+        ow_dive_totals: 'Dive totals 112',
         deep_dive_totals: '31',
         cave_dive_totals: 0,
         night_dive_totals: 17,
