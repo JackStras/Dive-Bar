@@ -9,7 +9,7 @@ router.get('/matching', withAuth, async (req, res) => {
         const userData = await User.findAll({
             where: {
                 id: {
-                    [Op.ne]: req.query.user_id
+                    [Op.ne]: req.params.user_id
                 },
                 certifications: {
                     [Op.substring]: certificationsVal,
@@ -17,32 +17,8 @@ router.get('/matching', withAuth, async (req, res) => {
                 gas_mixes: {
                     [Op.substring]: gas_mixesVal,
                 },
-                ow_dive_totals: {
+                dive_totals: {
                     [Op.gte]: parseInt(ow_dive_totalsVal)
-                },
-                deep_dive_totals: {
-                    [Op.gte]: parseInt(deep_dive_totalsVal)
-                },
-                cave_dive_totals: {
-                    [Op.gte]: parseInt(cave_dive_totalsVal)
-                },
-                night_dive_totals: {
-                    [Op.gte]: parseInt(night_dive_totalsVal)
-                },
-                shark_dive_totals: {
-                    [Op.gte]: parseInt(shark_dive_totalsVal)
-                },
-                wreck_dive_totals: {
-                    [Op.gte]: parseInt(wreck_dive_totalsVal)
-                },
-                drift_dive_totals: {
-                    [Op.gte]: parseInt(drift_dive_totalsVal)
-                },
-                altitude_dive_totals: {
-                    [Op.gte]: parseInt(altitude_dive_totalsVal)
-                },
-                tech_dive_totals: {
-                    [Op.gte]: parseInt(tech_dive_totalsVal)
                 },
                 photography: photographyVal,
                 active_efr: active_efrVal,
