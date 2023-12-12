@@ -3,28 +3,28 @@ const { User, Threads } = require('../../models');
 const { Op } = require('sequelize')
 const withAuth = require('../../utils/auth');
 
-router.get('/matching', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         // Get all divers that match search criteria
         const userData = await User.findAll({
             where: {
                 id: {
-                    [Op.ne]: req.params.user_id
+                    [Op.ne]: req.session.user_id
                 },
                 certifications: {
-                    [Op.substring]: certificationsVal,
+                    [Op.substring]: req.body.certificationsVal,
                 },
                 gas_mixes: {
-                    [Op.substring]: gas_mixesVal,
+                    [Op.substring]: req.body.gas_mixesVal,
                 },
                 dive_totals: {
-                    [Op.gte]: parseInt(ow_dive_totalsVal)
+                    [Op.gte]: parseInt(req.body.ow_dive_totalsVal)
                 },
-                photography: photographyVal,
-                active_efr: active_efrVal,
-                active_02: active_O2Val,
-                active_dm: active_dmVal,
-                active_instructor: active_instructorVal,
+                photography: req.body.photographyVal,
+                active_efr: req.body.active_efrVal,
+                active_02: req.body.active_O2Val,
+                active_dm: req.body.active_dmVal,
+                active_instructor: req.body.active_instructorVal,
             },
         },
         );
@@ -34,6 +34,14 @@ router.get('/matching', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/search', withAuth, async (req, res) => {
+    try {
+        res.render
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
 
 router.get('/:id', withAuth, async (req, res) => {
     try {
