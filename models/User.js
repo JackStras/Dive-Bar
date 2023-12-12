@@ -6,7 +6,10 @@ const sequelize = require('../config/connection')
 class User extends Model {
     // set up method to check password
     checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
+        // return bcrypt.compareSync(loginPw, this.password);
+        if(loginPw == this.password){
+            return true
+        }
     }
 }
 
@@ -46,46 +49,6 @@ User.init(
         ow_dive_totals: {
             type: DataTypes.FLOAT,
             allowNull: false, 
-            defaultValue: 0
-        },
-        deep_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        cave_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        night_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        shark_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        wreck_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        drift_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        altitude_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        tech_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
             defaultValue: 0
         },
         photography: {

@@ -58,7 +58,6 @@ let editFormHandler = async (event) => {
         alert(response.statusText)
     }
 }
-
 document
-  .querySelector('.edit-form')
-  .addEventListener('submit', editFormHandler);
+    .querySelector('.form')
+    .addEventListener('submit', editFormHandler);

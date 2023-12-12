@@ -9,8 +9,6 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.loggedIn = true;
-            console.log(req.session.loggedIn)
-
             res.status(200).json(userData);
         });
     } catch (err) {
@@ -25,7 +23,7 @@ router.post('/login', async (req, res) => {
         if (!userData) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect email,  please try again' });
             return;
         }
 
@@ -34,7 +32,7 @@ router.post('/login', async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
@@ -46,6 +44,7 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
+        console.log(err)
         res.status(400).json(err);
     }
 });
@@ -62,7 +61,7 @@ router.post('/logout', (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        const userData = await User.update(req.body,
+        const userData = await User.update(
             {
                 certifications: req.body.certificationsVal,
                 gas_mixes: req.body.gas_mixesVal,
@@ -81,14 +80,19 @@ router.put('/:id', async (req, res) => {
                 active_dm: req.body.active_dmVal,
                 active_instructor: req.body.active_instructorVal
             },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
         );
+
         res.status(200).json(userData);
-    } catch(err) {
-        res.status(500).json(err)
+        console.log(userData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
     }
-
-
-
-})
+});
 
 module.exports = router;
