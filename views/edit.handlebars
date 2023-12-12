@@ -2,16 +2,24 @@
 <h2>{{username}}</h2>
 
 <div class ="row justify-space-between-md">
-    <form class="form edit-form">
+    <form class="form">
         <input class="form-input" type="text" id="certification-form">
         <input class="form-input" type="text" id="gas-mixes-form">
         <input class="form-input" type="text" id="ow-dive-form">
+        <input class="form-input" type="text" id="deep-dive-form">
+        <input class="form-input" type="text" id="cave-dive-form">
+        <input class="form-input" type="text" id="night-dive-form">
+        <input class="form-input" type="text" id="shark-dive-form">
+        <input class="form-input" type="text" id="wreck-dive-form">
+        <input class="form-input" type="text" id="drift-dive-form">
+        <input class="form-input" type="text" id="altitude-dive-form">
+        <input class="form-input" type="text" id="tech-dive-form">
         <input class="form-input" type="text" id="photography-form">
         <input class="form-input" type="text" id="efr-form">
         <input class="form-input" type="text" id="O2-form">
         <input class="form-input" type="text" id="dm-form">
         <input class="form-input" type="text" id="instructor-form">
-        <button class="btn btn-primary" type="submit">TEST</button>
+        <button class="btn btn-primary edit-form" type="submit">TEST</button>
     </form>
 </div>
 
@@ -20,7 +28,8 @@
 
 <p id="paragraph" data-userId="{{id}}"></p>
 
-<<<<<<< HEAD
+<script src="./js/edit.js"></script>
+
 {{!--<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +39,6 @@
     <title>THE DIVE BAR</title>
 </head>
 <body>
-
 <header>
     <div id="wrapper">
         <div id="header">
@@ -39,10 +47,8 @@
         </div>
     </div>
 </header>
-
 <h2 class="title">Welcome to the DIVE COMMUNITY!</h2>
 <div class="story"></div>
-
 <div class="profile-edit">
     <h2 class="heading">Edit Your Profile</h2>
     <div class="content">
@@ -50,30 +56,23 @@
             
             <label for="check1"><input type="checkbox" id="check1" name="Photography"> Photography </label>
             <br>
-
             <label for="check2"><input type="checkbox" id="check2" name="active"> Active EFR</label>
             <br>
-
             <label for="check4"><input type="checkbox" id="check4" name="Active O2"> Active O2</label>
             <br>
-
             <label for="check5"><input type="checkbox" id="check5" name="Active DM"> Active DM</label>
             <br>
-
             <label for="check6"><input type="checkbox" id="check6" name="Active Instructor"> Active Instructor</label>
             <br>
-
             <!-- Other profile fields -->
             <label for="name">Name:</label>
             <br>
             <input type="text" id="name" name="name" placeholder="Your Name">
             <br>
-
             <label for="location">Location:</label>
             <br>
             <input type="text" id="location" name="location" placeholder="Your Location">
             <br>
-
             <label for="about">About Me:</label>
             <br>
             <textarea id="about" name="about" placeholder="Tell us about yourself"></textarea>
@@ -81,14 +80,11 @@
         </form>
     </div>
 </div>
-
             <!-- Add more fields as needed -->
-
             <input type="submit" value="Save Changes">
         </form>
     </div>
 </div>
-
 <div class="topnav" id="Topnav">
     <a href="#home" class="active">Home</a>
     <a href="profile_edit.html">Profile</a> <!-- Link to the editable profile page -->
@@ -96,11 +92,9 @@
     <a href="#contact">Divers</a>
     <a href="#about">Settings</a>
 </div>
-
 <div id="footer">
     <p>&copy; 2023 DIVE BAR. All rights reserved.</p>
 </div>
-
 </body>
 </html>
   --}}
@@ -113,7 +107,6 @@
     background-image: url('BG2.png');
     margin: 0;
 }
-
 .profile-edit {
     width: 60%;
     margin: 20px auto;
@@ -121,7 +114,6 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
 .profile-edit .heading {
     margin-top: 0;
     padding: 8px 15px;
@@ -131,18 +123,15 @@
     color: #FFFFFF;
     background: #004D40 no-repeat center bottom;
 }
-
 .profile-edit .content {
     margin: 0;
     padding: 10px;
 }
-
 .profile-edit label {
     display: block;
     margin-bottom: 5px;
     color: #FFFFFF;
 }
-
 .profile-edit input,
 .profile-edit textarea,
 .profile-edit select {
@@ -151,12 +140,10 @@
     margin-bottom: 10px;
     box-sizing: border-box;
 }
-
 .profile-edit textarea {
     resize: vertical;
     align-items: center;
 }
-
 #footer {
     border-top: 1px dotted #004D40;
     font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
@@ -169,6 +156,3 @@
     width: 100%;
 }
  --}}
-=======
-<script src="./js/edit.js"></script>
->>>>>>> 75d57fe92728e5c9cdf6ee3e9f202a9b49266c84
