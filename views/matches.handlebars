@@ -1,3 +1,339 @@
 {{#each Username as |Username|}}
 {{!--   {{> Username-details}} --}}
 {{/each}}
+
+
+{{!-- HTML Code for profile Results --}}
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>THE DIVE BAR</title>
+</head>
+<body>
+
+<header>
+    <div id="wrapper">
+        <div id="header">
+            <h1>DIVE BAR</h1>
+        </div>
+    </div>
+</header>
+
+<h2 class="title">Find your DIVE community</h2>
+<div class="story"></div>
+
+<div class="container clearfix">
+    
+<!-- Profile Results column -->
+<div class="profile-column">
+    <!-- Profile 1 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 1</h2>
+        <div class="content">
+            <img src="profile1-image.jpg" alt="Profile Image 1">
+            <h3>FirstName1 LastName1</h3>
+            <p>Location: Place of origin 1</p>
+            <p>About Me: I love to XYZ</p>
+        </div>
+    </div>
+
+    <!-- Profile 2 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 2</h2>
+        <div class="content">
+            <img src="profile2-image.jpg" alt="Profile Image 2">
+            <h3>FirstName2 LastName2</h3>
+            <p>Location: Place of origin 2</p>
+            <p>About Me: I enjoy underwater photography.</p>
+        </div>
+    </div>
+
+    <!-- Profile 3 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 3</h2>
+        <div class="content">
+            <img src="profile3-image.jpg" alt="Profile Image 3">
+            <h3>FirstName3 LastName3</h3>
+            <p>Location: Place of origin 3</p>
+            <p>About Me: Exploring the depths is my passion.</p>
+        </div>
+    </div>
+
+    <!-- Profile 4 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 4</h2>
+        <div class="content">
+            <img src="profile4-image.jpg" alt="Profile Image 4">
+            <h3>FirstName4 LastName4</h3>
+            <p>Location: Place of origin 4</p>
+            <p>About Me: Dive into the unknown with me!</p>
+        </div>
+    </div>
+
+    <!-- Profile 5 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 5</h2>
+        <div class="content">
+            <img src="profile5-image.jpg" alt="Profile Image 5">
+            <h3>FirstName5 LastName5</h3>
+            <p>Location: Place of origin 5</p>
+            <p>About Me: Ocean enthusiast and marine life lover.</p>
+        </div>
+    </div>
+
+    <!-- Profile 6 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 6</h2>
+        <div class="content">
+            <img src="profile6-image.jpg" alt="Profile Image 6">
+            <h3>FirstName6 LastName6</h3>
+            <p>Location: Place of origin 6</p>
+            <p>About Me: Diving is my meditation.</p>
+        </div>
+    </div>
+
+    <!-- Profile 7 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 7</h2>
+        <div class="content">
+            <img src="profile7-image.jpg" alt="Profile Image 7">
+            <h3>FirstName7 LastName7</h3>
+            <p>Location: Place of origin 7</p>
+            <p>About Me: Underwater explorer and adventurer.</p>
+        </div>
+    </div>
+
+    <!-- Profile 8 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 8</h2>
+        <div class="content">
+            <img src="profile8-image.jpg" alt="Profile Image 8">
+            <h3>FirstName8 LastName8</h3>
+            <p>Location: Place of origin 8</p>
+            <p>About Me: Seeking the beauty beneath the waves.</p>
+        </div>
+    </div>
+
+    <!-- Profile 9 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 9</h2>
+        <div class="content">
+            <img src="profile9-image.jpg" alt="Profile Image 9">
+            <h3>FirstName9 LastName9</h3>
+            <p>Location: Place of origin 9</p>
+            <p>About Me: Scuba diving is my therapy.</p>
+        </div>
+    </div>
+
+    <!-- Profile 10 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 10</h2>
+        <div class="content">
+            <img src="profile10-image.jpg" alt="Profile Image 10">
+            <h3>FirstName10 LastName10</h3>
+            <p>Location: Place of origin 10</p>
+            <p>About Me: Captivated by the mysteries of the sea.</p>
+        </div>
+    </div>
+
+  
+    <!-- Profile 11 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 11</h2>
+        <div class="content">
+            <img src="profile11-image.jpg" alt="Profile Image 11">
+            <h3>FirstName11 LastName11</h3>
+            <p>Location: Place of origin 11</p>
+            <p>About Me: Deep-sea diver and underwater photographer.</p>
+        </div>
+    </div>
+
+    <!-- Profile 12 -->
+    <div class="profile-view">
+        <h2 class="heading">Profile 12</h2>
+        <div class="content">
+            <img src="profile12-image.jpg" alt="Profile Image 12">
+            <h3>FirstName12 LastName12</h3>
+            <p>Location: Place of origin 12</p>
+            <p>About Me: Passionate about marine conservation.</p>
+        </div>
+    </div>
+</div>
+
+<div class="topnav" id="Topnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">Profile</a>
+    <a href="#contact">Divers</a>
+    <a href="#about">Settings</a>
+</div>
+
+
+<div id="footer">
+    <p>&copy; 2023 DIVE BAR. All rights reserved.</p>
+</div>
+
+<script>
+    function openProfileSettings() {
+        document.getElementById('profileSettings').style.display = 'block';
+    }
+
+    function toggleProfileSettings() {
+        document.getElementById('profileSettings').style.display = 'none';
+    }
+</script>
+</body>
+</html> 
+ --}}
+
+    {{!-- CSS Code for profile Results --}}
+{{!-- 
+    body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #004D40; 
+    color: #fff; 
+}
+
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color:#004D40;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Search Form Styles */
+.search-column {
+  width: 30%;
+}
+
+#search {
+  background-color:white ;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+label, select, input {
+  margin-bottom: 10px;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Profile Results Styles */
+.profile-column {
+  width: 100%;
+  text-align: center;
+}
+
+.profile-view {
+  display: inline-block;
+  width: 100%; /* Full width for small screens, one column */
+  margin: 10px;
+  background-color: darkblue;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center; /* Center text within each profile box */
+}
+
+/* Responsive two-column layout for larger screens */
+@media (min-width: 768px) {
+  .profile-view {
+      width: 48%; /* Two columns with a small gap */
+  }
+}
+
+.profile-view img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.content h3, .content p {
+  margin-bottom: 10px;
+}
+
+.topnav {
+  background-color:white; 
+  overflow: hidden;
+  position: fixed; 
+  top: 0;
+  right: 0; 
+  width: 200px; 
+}
+
+.topnav a {
+  display: block;
+  color: black; 
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+  border: 1px solid black; 
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: white;
+  color: black;
+} 
+
+/* Footer Styles */
+#footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+ --}}
