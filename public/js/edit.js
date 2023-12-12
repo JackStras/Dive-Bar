@@ -25,7 +25,6 @@ let editFormHandler = async (event) => {
 
     // can change this later
     const userId = document.getElementById('paragraph').dataset.userId
-
     const data = {
         certificationsVal,
         gas_mixesVal,

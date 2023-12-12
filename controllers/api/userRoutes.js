@@ -64,9 +64,6 @@ router.put('/:id', async (req, res) => {
     try {
         const userData = await User.update(req.body,
             {
-                where: {
-                    id: req.params.id
-                },
                 certifications: req.body.certificationsVal,
                 gas_mixes: req.body.gas_mixesVal,
                 ow_dive_totals: req.body.ow_dive_totalsVal,
