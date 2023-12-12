@@ -51,46 +51,6 @@ User.init(
             allowNull: false, 
             defaultValue: 0
         },
-        deep_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        cave_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        night_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        shark_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        wreck_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        drift_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        altitude_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
-        tech_dive_totals: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0
-        },
         photography: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
