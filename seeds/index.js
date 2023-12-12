@@ -3,7 +3,7 @@ const threadData = require('./thread-seeds')
 const { User, Threads }= require('../models')
 const sequelize = require('../config/connection')
 
-
+// hello team
 
 const seedDB = async () => {
     await sequelize.sync({ force: true })
