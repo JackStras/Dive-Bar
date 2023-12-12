@@ -106,14 +106,14 @@ a:hover {
 
 #header a {
   text-decoration: none;
-  color: #004D40; /* Dark green header link color */
+  color: #004D40; 
 }
 
 #pages {
   float: right;
   width: 568px;
   height: 150px;
-  background: url(images/img2.jpg);
+  background: url(images/BG2);
 }
 
 #pages h2 {
@@ -136,7 +136,7 @@ a:hover {
   padding-left: 2em;
   text-decoration: none;
   font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
-  color: #004D40; /* Dark green page link color */
+  color: #004D40; 
 }
 
 #pages a:hover {
@@ -163,9 +163,162 @@ a:hover {
 .post .title {
   margin: 0;
   font-size: 2em;
-  color: #004D40; /* Dark }
+  color: #004D40;  }
 
 
 
 
 
+/* Updated CSS Code for Homepage */
+
+/*  body {
+    padding-left: 11em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: rgb(170, 198, 211);
+    background-image: url('BG2.png');
+    margin: 0;
+}
+
+.boxed {
+    float: left;
+    clear: left;
+    width: 200px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.boxed .heading {
+    margin-top: 0;
+    padding: 8px 15px;
+    background: #004D40 no-repeat center bottom; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+}
+
+.boxed .content {
+    margin: 0;
+    padding: 5px 14px 10px 14px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 10px;
+}
+
+.boxed label {
+    display: block;
+}
+
+#dropdown1,
+#dropdown2,
+#dropdown3 {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 10px;
+}
+
+.topnav {
+    background-color:white; 
+    overflow: hidden;
+    position: fixed; 
+    top: 0;
+    right: 0; 
+    width: 200px; 
+}
+
+.topnav a {
+    display: block;
+    color: black; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+    border: 1px solid black; 
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.title {
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+
+.search-results {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+.search-column,
+.profile-column,
+.results-column {
+  float: left;
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#search-input,
+#dropdown1,
+#dropdown3 {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 10px;
+}
+
+.boxed label {
+  display: block;
+}
+
+.topnav {
+  background-color: white; 
+  overflow: hidden;
+  position: fixed; 
+  top: 0;
+  right: 0; 
+  width: 200px; 
+}
+
+.topnav a {
+  display: block;
+  color: black; 
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+  border: 1px solid black; 
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.title {
+  font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+
+.search-results {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+#footer {
+  border-top: 1px dotted #004D40;
+  font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+  color: black;
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+ */
