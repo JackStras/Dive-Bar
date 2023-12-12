@@ -163,8 +163,8 @@ a:hover {
 .post .title {
   margin: 0;
   font-size: 2em;
-  color: #004D40; /* Dark 
-
+  color: #004D40; 
+}
 
 /* :root {
     --primary: #4a6b63;    
@@ -222,7 +222,4 @@ a {
   main {
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
-  }
-   */
-}
+    flex-grow: 1;}
