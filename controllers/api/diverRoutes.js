@@ -5,7 +5,6 @@ const withAuth = require('../../utils/auth');
 
 router.get('/matching', withAuth, async (req, res) => {
     try {
-        console.log(req.query)
         // Get all divers that match search criteria
         const userData = await User.findAll({
             where: {
@@ -13,43 +12,43 @@ router.get('/matching', withAuth, async (req, res) => {
                     [Op.ne]: req.query.user_id
                 },
                 certifications: {
-                    [Op.substring]: req.query.certifications,
+                    [Op.substring]: certificationsVal,
                 },
                 gas_mixes: {
-                    [Op.substring]: req.query.gas_mixes,
+                    [Op.substring]: gas_mixesVal,
                 },
                 ow_dive_totals: {
-                    [Op.gte]: parseInt(req.query.ow_dive_totals)
+                    [Op.gte]: parseInt(ow_dive_totalsVal)
                 },
                 deep_dive_totals: {
-                    [Op.gte]: parseInt(req.query.deep_dive_totals)
+                    [Op.gte]: parseInt(deep_dive_totalsVal)
                 },
                 cave_dive_totals: {
-                    [Op.gte]: parseInt(req.query.cave_dive_totals)
+                    [Op.gte]: parseInt(cave_dive_totalsVal)
                 },
                 night_dive_totals: {
-                    [Op.gte]: parseInt(req.query.night_dive_totals)
+                    [Op.gte]: parseInt(night_dive_totalsVal)
                 },
                 shark_dive_totals: {
-                    [Op.gte]: parseInt(req.query.shark_dive_totals)
+                    [Op.gte]: parseInt(shark_dive_totalsVal)
                 },
                 wreck_dive_totals: {
-                    [Op.gte]: parseInt(req.query.wreck_dive_totals)
+                    [Op.gte]: parseInt(wreck_dive_totalsVal)
                 },
                 drift_dive_totals: {
-                    [Op.gte]: parseInt(req.query.drift_dive_totals)
+                    [Op.gte]: parseInt(drift_dive_totalsVal)
                 },
                 altitude_dive_totals: {
-                    [Op.gte]: parseInt(parseIntreq.query.altitude_dive_totals)
+                    [Op.gte]: parseInt(altitude_dive_totalsVal)
                 },
                 tech_dive_totals: {
-                    [Op.gte]: parseInt(req.query.tech_dive_totals)
+                    [Op.gte]: parseInt(tech_dive_totalsVal)
                 },
-                photography: req.query.photography,
-                active_efr: req.query.active_efr,
-                active_02: req.query.active_02,
-                active_dm: req.query.active_dm,
-                active_instructor: req.query.active_instructor,
+                photography: photographyVal,
+                active_efr: active_efrVal,
+                active_02: active_O2Val,
+                active_dm: active_dmVal,
+                active_instructor: active_instructorVal,
             },
         },
         );
@@ -69,13 +68,11 @@ router.get('/:id', withAuth, async (req, res) => {
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err)
-        console.log(err.message)
     }
 });
 
 router.post('/', withAuth, async (req, res) => {
     try {
-        console.log(123)
         const threadData = await Threads.create(req.body);
         res.status(200).json(threadData);
     } catch (err) {
