@@ -18,9 +18,9 @@ let loginDiveFormHandler = async (event) => {
   }
 };
 
-let signupDiveFormHandler = async (event) => {
-  event.preventDefault();
-  try {
+  let signupDiveFormHandler = async (event) => {
+    event.preventDefault();
+  
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
@@ -38,11 +38,7 @@ let signupDiveFormHandler = async (event) => {
         alert(response.statusText)
       }
     }
-  } catch (err) {
-    console.log(err.message)
-  }
-
-};
+  };
 
 document
   .querySelector('.login-form')
@@ -51,3 +47,4 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupDiveFormHandler);
+;

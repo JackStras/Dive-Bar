@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
         if (!userData) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect email,  please try again' });
             return;
         }
 
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json({ message: 'Incorrect password, please try again' });
             return;
         }
 
@@ -44,6 +44,7 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
+        console.log(err)
         res.status(400).json(err);
     }
 });
@@ -59,37 +60,32 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
+    console.log('TEST')
     try {
-        const userData = await User.update(req.body,
+        const userData = await User.update(
             {
-                where: {
-                    id: req.params.id
-                },
                 certifications: req.body.certificationsVal,
                 gas_mixes: req.body.gas_mixesVal,
                 ow_dive_totals: req.body.ow_dive_totalsVal,
-                deep_dive_totals: req.body.deep_dive_totalsVal,
-                cave_dive_totals: req.body.cave_dive_totalsVal,
-                night_dive_totals: req.body.night_dive_totalsVal,
-                shark_dive_totals: req.body.shark_dive_totalsVal,
-                wreck_dive_totals: req.body.wreck_dive_totalsVal,
-                drift_dive_totals: req.body.drift_dive_totalsVal,
-                altitude_dive_totals: req.body.altitude_dive_totalsVal,
-                tech_dive_totals: req.body.tech_dive_totalsVal,
                 photography: req.body.photographyVal,
                 active_efr: req.body.active_efrVal,
                 active_O2: req.body.active_O2Val,
                 active_dm: req.body.active_dmVal,
                 active_instructor: req.body.active_instructorVal
             },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
         );
+
         res.status(200).json(userData);
-    } catch(err) {
-        res.status(500).json(err)
+        console.log(userData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
     }
-
-
-
-})
+});
 
 module.exports = router;

@@ -1,12 +1,57 @@
 <div class="UserName">  
 {{#if loggedIn}}
 <section class="user">
-<h2>Welcome, {{name}}!</h2>
+<h2>Welcome, {{user.username}}!</h2>
 </div>
+<div>
+owDiveTotals: {{user.ow_dive_totals}}
+</div>
+<div>
+  {{user.certifications}}
+</div>
+<div> 
+  {{user.gas_mixes}}
+</div>
+{{!-- <div> 
+  {{user.cave_dive_totals}}
+</div>
+<div> 
+  {{user.night_dive_totals}}
+</div>
+<div> 
+  {{user.shark_dive_totals}}
+</div>
+<div> 
+  {{user.wreck_dive_totals}}
+</div>
+<div> 
+  {{user.drift_dive_totals}}
+</div>
+<div> 
+  {{user.altitude_dive_totals}}
+</div>
+<div> 
+  {{user.photography}}
+</div>
+<div> 
+  {{user.tech_dive_totals}}
+</div>
+<div> 
+  {{user.active_instructor}}
+</div> --}}
 
+
+<div>
+  
+</div>
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>Date and Dive:</h3>
+
+<div class="boxed">
+  <a href="#"></a>
+</div>
+
 
 
   <form class="Find-your-Date">
@@ -43,6 +88,14 @@
 <a href="/login">You must login first to Date</a>
 {{/if}}  --}}
 {{/if}}
+
+
+<div class="form-group">
+        <button id="logout" type="submit" class="btn btn-primary">Logout</button>
+
+      </div>
+
+<script src="./js/logout.js"></script>
 
 
 <script src="./js/profile.js"></script>
