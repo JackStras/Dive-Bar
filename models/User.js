@@ -6,12 +6,12 @@ const sequelize = require('../config/connection')
 class User extends Model {
     // set up method to check password
     checkPassword(loginPw) {
-        // return bcrypt.compareSync(loginPw, this.password);
-        if(loginPw == this.password){
-            return true
-        }
+        return bcrypt.compareSync(loginPw, this.password);
+        // if(loginPw == this.password){
+        //     return true
     }
 }
+// }
 
 User.init(
     {
@@ -48,7 +48,7 @@ User.init(
         },
         ow_dive_totals: {
             type: DataTypes.FLOAT,
-            allowNull: false, 
+            allowNull: false,
             defaultValue: 0
         },
         photography: {
