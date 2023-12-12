@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 20px;
   padding: 0;
@@ -322,3 +323,101 @@ a:hover {
   width: 100%;
 }
  */
+=======
+ body {
+     padding-left: 11em;
+     font-family: Georgia, "Times New Roman", Times, serif;
+     color: rgb(170, 198, 211);
+     background-image: url(images/IMG_0264.jpg);
+     margin: 0;
+ }
+ 
+ .boxed {
+     float: left;
+     clear: left;
+     width: 200px;
+     margin: 0 0 10px 0;
+     padding: 0;
+ }
+ 
+ .boxed .heading {
+     margin-top: 0;
+     padding: 8px 15px;
+     background: #004D40 no-repeat center bottom; 
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+     color: #FFFFFF;
+ }
+ 
+ .boxed .content {
+     margin: 0;
+     padding: 5px 14px 10px 14px;
+ }
+ 
+ #search-input {
+     width: 100%;
+     padding: 0.5em;
+     margin-bottom: 10px;
+ }
+ 
+ .boxed label {
+     display: block;
+ }
+ 
+ #dropdown1,
+ #dropdown2,
+ #dropdown3 {
+     width: 100%;
+     padding: 0.5em;
+     margin-bottom: 10px;
+ }
+ 
+ .topnav {
+     background-color: white; 
+     overflow: hidden;
+     position: fixed; 
+     top: 0;
+     right: 0; 
+     width: 200px; 
+ }
+ 
+ .topnav a {
+     display: block;
+     color: black; 
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+     border: 1px solid black; 
+ }
+ 
+ .topnav a:hover {
+     background-color: #ddd;
+     color: black;
+ }
+ 
+ .title {
+     font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+ }
+ 
+ .search-results {
+     width: 80%;
+     margin: 20px auto;
+     text-align: center;
+ }
+ 
+ 
+ #footer {
+     border-top: 1px dotted #004D40;
+     font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+     color: black;
+     margin-top: auto;
+     padding: 10px;
+     text-align: center;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+ } 
+  
+>>>>>>> 75d57fe92728e5c9cdf6ee3e9f202a9b49266c84
