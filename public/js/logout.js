@@ -12,3 +12,5 @@ let divelogout = async () => {
     };
 
     document.querySelector('#logout').addEventListener('click', divelogout);
+
+

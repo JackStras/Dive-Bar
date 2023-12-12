@@ -1,153 +1,171 @@
-:root {
-    --primary: #4a6b63;    
-    --secondary: #7a8b87;  
-    --tertiary: #638b83;   
-    --quatrinary: #756f6b; 
-    --light: #f0f1f0;      
-    --dark: #1f352c;       
-    --error: rgb(228, 46, 1);
-    --border-radius: 0.3rem;
-  }
-
-
 body {
-  font-family: Arial, Helvetica, sans-serif;   /*'Pacifico', cursive; */ 
+  margin: 20px;
+  padding: 0;
+  background: #6ddae9; /* Light blue background */
+  font: normal .7em Tahoma, Arial, Helvetica, sans-serif;
+  color: #006064; /* Dark cyan text color */
+}
+
+.form {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: flex-start;
-  background-color: var(--quinary, #756f6b); 
+  padding: 0;
+}
+
+.h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+  color: #004D40; /* Dark green title color */
+}
+
+p, blockquote, ol, ul {
+  line-height: 160%;
 }
 
 a {
-    color: var(--tertiary); 
-    text-decoration: none;
-    font-family: cursive; 
-  }
+  color: #2979FF; /* Vivid blue link color */
+}
 
-  a:visited {
-    color: var(--secondary);
-  }
+a:hover {
+  text-decoration: none;
+}
 
-  :root {
-    --primary: #2c3e50;
-    --secondary: #3498db;
-    --tertiary: #e74c3c;
-    --quaternary: #ecf0f1;
-    --quinary: #2ecc71;
-    --dark: #1a252b;
-    --light: #ecf0f1;
-    --border-radius: 0.5rem;
-    --font-family: 'Roboto', sans-serif;
-  }
+.boxed {
+  float: left;
+  clear: left;
+  width: 200px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  background: #E0F7FA; /* Light blue box background */
+}
 
-  header {
-    padding: 40px;
-    text-align: center;
-    background: var(--primary);
-    color: var(--light);
-    transition: background 0.3s ease;
-    font-family: var(--font-family);
-  }
+.boxed .heading {
+  margin-top: 0;
+  padding: 8px 15px;
+  background: #004D40 url(images/img3.gif) no-repeat center bottom; /* Dark green heading background */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+}
 
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-  }
+.boxed .content {
+  margin: 0;
+  padding: 5px 14px 10px 14px;
+}
 
-  /* Sign up page
-   <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dive Bar Sign Up/Login</title>
-    <style>
-        body {
-            background-image:Project 2 Social /BG2.png ; 
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+.boxed ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: normal;
+}
 
-        .form-container {
-            background-color: tan; 
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            text-align: center;
-            margin: 0 20px;
-        }
+.boxed li {
+  padding: 3px 0;
+  border-top: 1px dotted #004D40; /* Dark green dotted border */
+}
 
-        h1 {
-            color: #0099cc; 
-        }
+.boxed li.first {
+  border: none;
+}
 
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #333;
-        }
+.boxed a {
+  padding-left: 10px;
+  background: url(images/img4.gif) no-repeat left center;
+  text-decoration: none;
+}
 
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+#wrapper {
+  width: 778px;
+  margin: 0 auto;
+}
 
-        button {
-            background-color: #0099cc; 
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+#header {
+  float: left;
+  width: 200px;
+  height: 150px;
+  background: url(images/img1.jpg);
+}
 
-        button:hover {
-            background-color: #007399; 
-        }
-    </style>
-</head>
-<body>
-    <div class="form-container">
-        <h1>Dive Bar Sign Up</h1>
-        <form action="#" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+#header h1 {
+  margin: 0;
+  padding: 43px 0 0 0;
+  text-align: center;
+  letter-spacing: -1px;
+  font-size: 2.5em;
+  color: #004D40; /* Dark green header title color */
+}
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+#header h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  font-style: italic;
+}
 
-            <label for="confirm-password">Re-enter Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
+#header a {
+  text-decoration: none;
+  color: #004D40; /* Dark green header link color */
+}
 
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
+#pages {
+  float: right;
+  width: 568px;
+  height: 150px;
+  background: url(images/img2.jpg);
+}
 
-    <div class="form-container">
-        <h1>Dive Bar Login</h1>
-        <form action="#" method="post">
-            <label for="login-username">Username:</label>
-            <input type="text" id="login-username" name="login-username" required>
+#pages h2 {
+  display: none;
+}
 
-            <label for="login-password">Password:</label>
-            <input type="password" id="login-password" name="login-password" required>
+#pages ul {
+  float: right;
+  margin: 0;
+  padding: 125px 15px 0 0;
+  list-style: none;
+  line-height: normal;
+}
 
-            <button type="submit">Log In</button>
-        </form>
-    </div>
-</body>
-</html> -->
+#pages li {
+  display: inline;
+}
 
- */
+#pages a {
+  padding-left: 2em;
+  text-decoration: none;
+  font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+  color: #004D40; /* Dark green page link color */
+}
+
+#pages a:hover {
+  text-decoration: underline;
+}
+
+/* Content */
+#content {
+  clear: both;
+  padding-top: 10px;
+}
+
+/* Posts */
+#posts {
+  float: right;
+  width: 520px;
+  padding-right: 20px;
+}
+
+.post {
+  padding-top: 10px;
+}
+
+.post .title {
+  margin: 0;
+  font-size: 2em;
+  color: #004D40; /* Dark }
+
+
+
+
+

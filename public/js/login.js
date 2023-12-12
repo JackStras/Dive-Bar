@@ -10,24 +10,22 @@ let loginDiveFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/profile');
     } else {
       alert('You did not login');
     }
   }
 };
 
-let signupDiveFormHandler = async (event) => {
-  event.preventDefault();
+  let signupDiveFormHandler = async (event) => {
+    event.preventDefault();
+  
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
-  const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (username && email && password) {
-    try {
+    if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
@@ -39,11 +37,8 @@ let signupDiveFormHandler = async (event) => {
       } else {
         alert(response.statusText)
       }
-    } catch (err) {
-      console.log(err.message)
     }
-  }
-};
+  };
 
 document
   .querySelector('.login-form')
@@ -52,3 +47,4 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupDiveFormHandler);
+;
