@@ -24,7 +24,6 @@ let editFormHandler = async (event) => {
         active_dmVal,
         active_instructorVal
     }
-
     const response = await fetch(`/api/users/${userId}`, {
         method: 'PUT',
         headers: {

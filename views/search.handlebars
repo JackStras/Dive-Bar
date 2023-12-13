@@ -3,32 +3,32 @@
     <div class="content">
         <form method="get" action="#">
             <div>
-                <input type="text" id="search-input" name="search-input" placeholder="Number of Dives..." />
+                <input type="text" id="ow-dive-form" name="search-input" placeholder="Number of Dives..." />
 
                 <form method="get" action="#">
                     <div>
 
-                        <label for="check1"><input type="checkbox" id="check1" name="Photography"> Photography </label>
-                        <label for="check2"><input type="checkbox" id="check2" name="Active EFR"> Active Emergencry
+                        <label for="check1"><input type="checkbox" id="photography-form" name="Photography"> Photography </label>
+                        <label for="check2"><input type="checkbox" id="efr-form" name="Active EFR"> Active Emergencry
                             first responder</label>
-                        <label for="check4"><input type="checkbox" id="check3" name="Active O2"> Active O2
+                        <label for="check4"><input type="checkbox" id="O2-form" name="Active O2"> Active O2
                             Adminsitrator</label>
-                        <label for="check5"><input type="checkbox" id="check4" name="Active DM"> Active Dive
+                        <label for="check5"><input type="checkbox" id="dm-form" name="Active DM"> Active Dive
                             Master</label>
-                        <label for="check6"><input type="checkbox" id="check5" name="Active Instructor"> Active
+                        <label for="check6"><input type="checkbox" id="instructor-form" name="Active Instructor"> Active
                             Instructor</label>
 
                     </div>
 
                     <label for="dropdown1">GAS MIXES</label>
-                    <select id="dropdown1" name="dropdown1">
+                    <select id="gas-mixes-form" name="dropdown1">
                         <option value="option1">Air</option>
-                        <option value="option2">Nirtox</option>
+                        <option value="option2">Nitrox</option>
                         <option value="option3"> Tri-Mix</option>
                     </select>
 
                     <label for="dropdown3">CERTIFICATIONS:</label>
-                    <select id="dropdown3" name="dropdown3">
+                    <select id="certification-form" name="dropdown3">
                         <option value="choice1">Open Water</option>
                         <option value="choice2">Advanced Open Water</option>
                         <option value="choice3">Dive Master</option>
@@ -52,3 +52,5 @@
 <div class="search-results">
     
 </div>
+<p id="paragraph" data-userId="{{id}}"></p>
+<script src="./js/matching.js"></script>
