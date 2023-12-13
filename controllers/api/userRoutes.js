@@ -79,7 +79,6 @@ router.put('/:id', async (req, res) => {
                 }
             }
         );
-
         res.status(200).json(userData);
         console.log(userData);
     } catch (err) {
@@ -87,5 +86,4 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 module.exports = router;
