@@ -8,7 +8,6 @@ class User extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
         // if(loginPw == this.password){
-            // return true
         }
     }
 // }
@@ -48,7 +47,7 @@ User.init(
         },
         ow_dive_totals: {
             type: DataTypes.FLOAT,
-            allowNull: false, 
+            allowNull: false,
             defaultValue: 0
         },
         photography: {
