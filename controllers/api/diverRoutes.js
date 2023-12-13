@@ -31,6 +31,7 @@ router.post('/', withAuth, async (req, res) => {
         );
 
         res.status(200).json(userData);
+        res.redirect('/matches')
     } catch (err) {
         console.error(err.stack)
         res.status(500).json(err);

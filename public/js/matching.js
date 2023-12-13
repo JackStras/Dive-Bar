@@ -30,12 +30,14 @@ let matchingFormHandler = async (event) => {
     })
     if (response.ok) {
         console.log('RESPONSE OK')
-        // document.location.replace('/')
     } else {
         alert(response.statusText)
     }
 }
 
+
+
 document
     .querySelector('form')
     .addEventListener('submit', matchingFormHandler);
+
