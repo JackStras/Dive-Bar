@@ -38,14 +38,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/search', withAuth, async (req, res) => {
-    try {
-        res.render
-    } catch(err) {
-        res.status(500).json(err)
-    }
-})
-
 router.get('/:id', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.params.id, {
