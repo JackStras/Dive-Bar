@@ -15,14 +15,14 @@ let editFormHandler = async (event) => {
     const userId = document.getElementById('paragraph').dataset.userid
 
     const data = {
-        certificationsVal,
-        gas_mixesVal,
-        ow_dive_totalsVal,
-        photographyVal,
-        active_efrVal,
-        active_O2Val,
-        active_dmVal,
-        active_instructorVal
+        certifications: certificationsVal,
+        gas_mixes: gas_mixesVal,
+        ow_dive_totals: ow_dive_totalsVal,
+        photography: photographyVal,
+        active_efr: active_efrVal,
+        active_O2: active_O2Val,
+        active_dm: active_dmVal,
+        active_instructor: active_instructorVal
     }
     const response = await fetch(`/api/users/${userId}`, {
         method: 'PUT',
