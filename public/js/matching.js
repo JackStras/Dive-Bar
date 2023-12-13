@@ -10,10 +10,6 @@ let matchingFormHandler = async (event) => {
     let active_dmVal = document.querySelector('#dm-form').value.trim()
     let active_instructorVal = document.querySelector('#instructor-form').value.trim()
 
-
-    // can change this later
-    const userId = document.getElementById('paragraph').dataset.userid
-
     const data = {
         certifications: certificationsVal,
         gas_mixes: gas_mixesVal,
