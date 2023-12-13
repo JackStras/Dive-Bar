@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll();
+
+            res.status(200).json(userData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 router.post('/', async (req, res) => {
     try {
@@ -64,14 +73,14 @@ router.put('/:id', async (req, res) => {
     try {
         const userData = await User.update(
             {
-                certifications: req.body.certificationsVal,
-                gas_mixes: req.body.gas_mixesVal,
-                ow_dive_totals: req.body.ow_dive_totalsVal,
-                photography: req.body.photographyVal,
-                active_efr: req.body.active_efrVal,
-                active_O2: req.body.active_O2Val,
-                active_dm: req.body.active_dmVal,
-                active_instructor: req.body.active_instructorVal
+                certifications: req.body.certifications,
+                gas_mixes: req.body.gas_mixes,
+                ow_dive_totals: req.body.ow_dive_totals,
+                photography: req.body.photography,
+                active_efr: req.body.active_efr,
+                active_O2: req.body.active_O2,
+                active_dm: req.body.active_dm,
+                active_instructor: req.body.active_instructor
             },
             {
                 where: {
