@@ -5,52 +5,42 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     console.log(req.body)
-    const conditions = {};
+    const conditions = {
+        certifications: {
+            [Op.substring]: req.body.certifications,
+        },
+        gas_mixes: {
+            [Op.substring]: req.body.gas_mixes,
+        },
+        ow_dive_totals: {
+            [Op.gte]: parseInt(req.body.ow_dive_totals)
+        },
+    };
     if (req.body.photography) {
-        conditions.photography = 1
+        conditions.photography = true
     }
     if (req.body.active_efr) {
-        conditions.active_efr = 1
+        conditions.active_efr = true
     }
     if (req.body.active_O2) {
-        conditions.active_O2 = 1
+        conditions.active_O2 = true
     }
     if (req.body.active_dm) {
-        conditions.active_dm = 1
+        conditions.active_dm = true
     }
     if (req.body.active_instructor) {
-        conditions.active_instructor = 1
+        conditions.active_instructor = true
     }
     console.log(conditions)
     try {
         // Get all divers that match search criteria
         const userData = await User.findAll({
-            where: {
-                id: {
-                    [Op.ne]: req.session.user_id
-                },
-                certifications: {
-                    [Op.substring]: req.body.certifications,
-                },
-                gas_mixes: {
-                    [Op.substring]: req.body.gas_mixes,
-                },
-                ow_dive_totals: {
-                    [Op.gte]: parseInt(req.body.ow_dive_totals)
-                },
-                conditions
-                // photography: req.body.photography,
-                // active_efr: req.body.active_efr,
-                // active_O2: req.body.active_O2,
-                // active_dm: req.body.active_dm,
-                // active_instructor: req.body.active_instructor
-            },
+            where: conditions
         },
 
         );
-
-        res.status(200).json(userData);
-        res.redirect('/matches')
+        const users = userData.map((user) => user.get({ plain: true }));
+        res.render('matches', users)
     } catch (err) {
         console.error(err.stack)
         res.status(500).json(err);
