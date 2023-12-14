@@ -1,0 +1,55 @@
+<div id="search" class="boxed">
+    <h2 class="heading">Search Divers</h2>
+    <div class="content">
+        <form method="get" action="#">
+            <div>
+                <input type="text" id="ow-dive-form" name="search-input" placeholder="Number of Dives..." />
+
+                <form method="get" action="#">
+                    <div>
+
+                        <label for="check1"><input type="checkbox" id="photography-form" name="Photography"> Photography
+                        </label>
+                        <label for="check2"><input type="checkbox" id="efr-form" name="Active EFR"> Active Emergencry
+                            first responder</label>
+                        <label for="check4"><input type="checkbox" id="O2-form" name="Active O2"> Active O2
+                            Adminsitrator</label>
+                        <label for="check5"><input type="checkbox" id="dm-form" name="Active DM"> Active Dive
+                            Master</label>
+                        <label for="check6"><input type="checkbox" id="instructor-form" name="Active Instructor"> Active
+                            Instructor</label>
+
+                    </div>
+
+                    <label for="dropdown1">GAS MIXES</label>
+                    <select id="gas-mixes-form" name="dropdown1">
+                        <option value="Air">Air</option>
+                        <option value="Nitrox">Nitrox</option>
+                        <option value="Tri-Mix"> Tri-Mix</option>
+                    </select>
+
+                    <label for="dropdown3">CERTIFICATIONS:</label>
+                    <select id="certification-form" name="dropdown3">
+                        <option value="Open Water">Open Water</option>
+                        <option value="Advanced Open Water">Advanced Open Water</option>
+                        <option value="Dive Master">Dive Master</option>
+                        <option value="Instructor">Instructor</option>
+                        <option value="Master Diver">Master Diver</option>
+                        <option value="Cave 1">Cave 1</option>
+                        <option value="Cave 2">Cave 2</option>
+                        <option value="Wreck Penetration">Wreck Penetration</option>
+                        <option value="Altitude Diver">Altitude Diver</option>
+                        <option value="Tech Diver">Tech Diver</option>
+                    </select>
+
+                    <input type="submit" id="submit1" name="submit1" value="Go" />
+            </div>
+    </div>
+    </form>
+</div>
+
+<div class="search-results">
+
+</div>
+
+<script src="./js/matching.js"></script>

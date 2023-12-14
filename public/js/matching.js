@@ -1,34 +1,28 @@
-const { User } = require('../../models')
-
 let matchingFormHandler = async (event) => {
     event.preventDefault()
 
     let certificationsVal = document.querySelector('#certification-form').value.trim()
-    let gas_mixesVal = document.querySelector('#gas-mixes-form').value.trim()
-    let ow_dive_totalsVal = document.querySelector('#ow-dive-form').value.trim()
-    let photographyVal = document.querySelector('#photography-form').value.trim()
-    let active_efrVal = document.querySelector('#efr-form').value.trim()
-    let active_O2Val = document.querySelector('#O2-form').value.trim()
-    let active_dmVal = document.querySelector('#dm-form').value.trim()
-    let active_instructorVal = document.querySelector('#instructor-form').value.trim()
-
-
-    // can change this later
-    const userId = document.getElementById('paragraph').dataset.userId
+    let gas_mixesVal = document.querySelector('#gas-mixes-form').value
+    let ow_dive_totalsVal = document.querySelector('#ow-dive-form').value
+    let photographyVal = document.querySelector('#photography-form').checked=true;
+    let active_efrVal = document.querySelector('#efr-form').checked=true;
+    let active_O2Val = document.querySelector('#O2-form').checked=true;
+    let active_dmVal = document.querySelector('#dm-form').checked=true;
+    let active_instructorVal = document.querySelector('#instructor-form').checked=true;
 
     const data = {
-        certificationsVal,
-        gas_mixesVal,
-        ow_dive_totalsVal,
-        photographyVal,
-        active_efrVal,
-        active_O2Val,
-        active_dmVal,
-        active_instructorVal
+        certifications: certificationsVal,
+        gas_mixes: gas_mixesVal,
+        ow_dive_totals: ow_dive_totalsVal,
+        photography: photographyVal,
+        active_efr: active_efrVal,
+        active_O2: active_O2Val,
+        active_dm: active_dmVal,
+        active_instructor: active_instructorVal
     }
 
-    const response = await fetch(`/api/users/${userId}`, {
-        method: 'GET',
+    const response = await fetch(`/api/divers`, {
+        method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
@@ -36,12 +30,14 @@ let matchingFormHandler = async (event) => {
     })
     if (response.ok) {
         console.log('RESPONSE OK')
-        document.location.replace('/matches')
     } else {
         alert(response.statusText)
     }
 }
 
+
+
 document
-  .querySelector('form')
-  .addEventListener('submit', matchingFormHandler);
+    .querySelector('form')
+    .addEventListener('submit', matchingFormHandler);
+

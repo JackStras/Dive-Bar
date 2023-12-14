@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
     try {
@@ -59,19 +59,19 @@ router.post('/logout', (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     console.log('TEST')
     try {
         const userData = await User.update(
             {
-                certifications: req.body.certificationsVal,
-                gas_mixes: req.body.gas_mixesVal,
-                ow_dive_totals: req.body.ow_dive_totalsVal,
-                photography: req.body.photographyVal,
-                active_efr: req.body.active_efrVal,
-                active_O2: req.body.active_O2Val,
-                active_dm: req.body.active_dmVal,
-                active_instructor: req.body.active_instructorVal
+                certifications: req.body.certifications,
+                gas_mixes: req.body.gas_mixes,
+                ow_dive_totals: req.body.ow_dive_totals,
+                photography: req.body.photography,
+                active_efr: req.body.active_efr,
+                active_O2: req.body.active_O2,
+                active_dm: req.body.active_dm,
+                active_instructor: req.body.active_instructor
             },
             {
                 where: {
@@ -79,7 +79,6 @@ router.put('/:id', async (req, res) => {
                 }
             }
         );
-
         res.status(200).json(userData);
         console.log(userData);
     } catch (err) {
@@ -87,5 +86,4 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 module.exports = router;
