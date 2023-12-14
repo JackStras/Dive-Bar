@@ -5,6 +5,23 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     console.log(req.body)
+    const conditions = {};
+    if (req.body.photography) {
+        conditions.photography = 1
+    }
+    if (req.body.active_efr) {
+        conditions.active_efr = 1
+    }
+    if (req.body.active_O2) {
+        conditions.active_O2 = 1
+    }
+    if (req.body.active_dm) {
+        conditions.active_dm = 1
+    }
+    if (req.body.active_instructor) {
+        conditions.active_instructor = 1
+    }
+    console.log(conditions)
     try {
         // Get all divers that match search criteria
         const userData = await User.findAll({
@@ -21,13 +38,15 @@ router.post('/', withAuth, async (req, res) => {
                 ow_dive_totals: {
                     [Op.gte]: parseInt(req.body.ow_dive_totals)
                 },
-                photography: req.body.photography,
-                active_efr: req.body.active_efr,
-                active_O2: req.body.active_O2,
-                active_dm: req.body.active_dm,
-                active_instructor: req.body.active_instructor
+                conditions
+                // photography: req.body.photography,
+                // active_efr: req.body.active_efr,
+                // active_O2: req.body.active_O2,
+                // active_dm: req.body.active_dm,
+                // active_instructor: req.body.active_instructor
             },
         },
+
         );
 
         res.status(200).json(userData);
