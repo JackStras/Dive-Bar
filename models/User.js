@@ -48,7 +48,7 @@ User.init(
         },
         ow_dive_totals: {
             type: DataTypes.FLOAT,
-            allowNull: false, 
+            allowNull: false,
             defaultValue: 0
         },
         photography: {
