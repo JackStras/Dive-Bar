@@ -1,34 +1,70 @@
 <h1>Test if working!</h1>
 <h2>{{username}}</h2>
-
 <div class ="row justify-space-between-md">
-    <form class="form">
-        <input class="form-input" type="text" id="certification-form">
-        <input class="form-input" type="text" id="gas-mixes-form">
-        <input class="form-input" type="text" id="ow-dive-form">
-        <input class="form-input" type="text" id="deep-dive-form">
-        <input class="form-input" type="text" id="cave-dive-form">
-        <input class="form-input" type="text" id="night-dive-form">
-        <input class="form-input" type="text" id="shark-dive-form">
-        <input class="form-input" type="text" id="wreck-dive-form">
-        <input class="form-input" type="text" id="drift-dive-form">
-        <input class="form-input" type="text" id="altitude-dive-form">
-        <input class="form-input" type="text" id="tech-dive-form">
-        <input class="form-input" type="text" id="photography-form">
-        <input class="form-input" type="text" id="efr-form">
-        <input class="form-input" type="text" id="O2-form">
-        <input class="form-input" type="text" id="dm-form">
-        <input class="form-input" type="text" id="instructor-form">
-        <button class="btn btn-primary edit-form" type="submit">TEST</button>
-    </form>
-</div>
+    <form class="form edit-form">
+        <label for="ow_input">Dive Total:</label>
+        <input class="form-input" type="text" value="{{ow_dive_totals}}" id="ow-dive-form">
+        
+        <label for="certifications">Select your certifications: </label>
+        <select multiple id="certification-form">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            <option value="Open Water">Open Water</option>
+            <option value="Advanced Open Water">Advanced Open Water</option>
+            <option value="Dive Master">Dive Master</option>
+            <option value="Instructor">Instructor</option>
+            <option value="Master Diver">Master Diver</option>
+            <option value="Cave 1">Cave 1</option>
+            <option value="Cave 2">Cave 2</option>
+            <option value="Wreck Penetration">Wreck Penetration</option>
+            <option value="Altitude Diver">Altitude Diver</option>
+            <option value="Tech Diver">Tech Diver</option>
+        </select>
 
+        <label for="gas-mixes">Select your gas mixes: </label>
+        <select multiple id="gas-mixes-form">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            <option value="Air">Air</option>
+            <option value="Nitrox">Nitrox</option>
+            <option value="Tri-Mix"> Tri-Mix</option>
+        </select>
 
+        <label for="photography">Active Photographer: </label>
+        <select id="photography-form">
+            <option value="true">True</option>
+            <option selected value="false">False</option>
+        </select>
 
+        <label for="efr">Active Emergency First Responder: </label>
+        <select id="efr-form">
+            <option value="true">True</option>
+            <option selected value="false">False</option>
+        </select>
+
+        <label for="O2">Able to fill tanks: </label>
+        <select id="O2-form">
+            <option value="true">True</option>
+            <option selected value="false">False</option>
+        </select>
+
+        <label for="dm">Active Dive Master: </label>
+        <select id="dm-form">
+            <option value="true">True</option>
+            <option selected value="false">False</option>
+        </select>
+
+        <label for="instructor">Active instructor: </label>
+        <select id="instructor-form">
+            <option value="true">True</option>
+            <option selected value="false">False</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Submit</button>
 
 <p id="paragraph" data-userId="{{id}}"></p>
 
 {{!--<!DOCTYPE html>
+
+<script src="./js/edit.js"></script>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -152,4 +188,4 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-}
+} --}}

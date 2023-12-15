@@ -1,5 +1,4 @@
 const { User } = require('../models')
-
 const userData = [
     {
         username: 'example_1',
@@ -41,5 +40,4 @@ const userData = [
         active_instructor: true
     }
 ]
-
 module.exports = userData
