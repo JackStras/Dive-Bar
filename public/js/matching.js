@@ -4,11 +4,11 @@ let matchingFormHandler = async (event) => {
     let certificationsVal = document.querySelector('#certification-form').value.trim()
     let gas_mixesVal = document.querySelector('#gas-mixes-form').value
     let ow_dive_totalsVal = document.querySelector('#ow-dive-form').value
-    let photographyVal = document.querySelector('#photography-form').checked=true;
-    let active_efrVal = document.querySelector('#efr-form').checked=true;
-    let active_O2Val = document.querySelector('#O2-form').checked=true;
-    let active_dmVal = document.querySelector('#dm-form').checked=true;
-    let active_instructorVal = document.querySelector('#instructor-form').checked=true;
+    let photographyVal = document.querySelector('#photography-form').checked
+    let active_efrVal = document.querySelector('#efr-form').checked
+    let active_O2Val = document.querySelector('#O2-form').checked
+    let active_dmVal = document.querySelector('#dm-form').checked
+    let active_instructorVal = document.querySelector('#instructor-form').checked
 
     const data = {
         certifications: certificationsVal,

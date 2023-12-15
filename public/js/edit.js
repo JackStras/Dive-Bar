@@ -1,8 +1,14 @@
 let editFormHandler = async (event) => {
     event.preventDefault()
     console.log("Work")
-    let certificationsVal = document.querySelector('#certification-form').value.trim()
-    let gas_mixesVal = document.querySelector('#gas-mixes-form').value.trim()
+
+    let selectedCerts = document.querySelectorAll('#certification-form option:checked')
+    let arrayCerts = Array.from(selectedCerts).map(el => el.value)
+    let certificationsVal = arrayCerts.toString()
+
+    let selectedGas = document.querySelectorAll('#gas-mixes-form option:checked')
+    let arrayGas = Array.from(selectedGas).map(el => el.value)
+    let gas_mixesVal = arrayGas.toString()
     let ow_dive_totalsVal = document.querySelector('#ow-dive-form').value.trim()
     let photographyVal = document.querySelector('#photography-form').value.trim()
     let active_efrVal = document.querySelector('#efr-form').value.trim()
@@ -10,6 +16,7 @@ let editFormHandler = async (event) => {
     let active_dmVal = document.querySelector('#dm-form').value.trim()
     let active_instructorVal = document.querySelector('#instructor-form').value.trim()
 
+    console.log(certificationsVal)
 
     // can change this later
     const userId = document.getElementById('paragraph').dataset.userid
@@ -41,5 +48,3 @@ let editFormHandler = async (event) => {
 document
     .querySelector('.form')
     .addEventListener('submit', editFormHandler);
-
-console.log('Test again')
