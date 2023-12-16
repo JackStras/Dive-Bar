@@ -35,16 +35,20 @@ router.post('/', withAuth, async (req, res) => {
     try {
         // Get all divers that match search criteria
         const userData = await User.findAll({
-          where:  
-            conditions
-        
-    }
-        );
-        const users = userData.map((user) => user.get({ plain: true }));
-        // res.render('matches', {users})
+            where: conditions
+        });
+        const users = userData.map((user) => {
+            const plainUser = user.get({ plain: true });
+            // Include the 'username' in the user data
+            return { ...plainUser, username: user.username };
+        });
+
+        console.log(users);
+        console.log('Data passed to template:', { users });
+        res.status(200).json(users);
     } catch (err) {
-        console.error(err.stack)
-        res.status(500).json(err);
+        console.error(err.stack);
+        res.status(500).json({ error: 'Internal Server Error', message: err.message });
     }
 });
 
