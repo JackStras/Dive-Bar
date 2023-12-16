@@ -105,6 +105,25 @@
     function toggleProfileSettings() {
         document.getElementById('profileSettings').style.display = 'none';
     }
+
+
+    // Function to add a comment to a profile
+    function addComment(profileId) {
+        const commentInput = document.getElementById(`comment-${profileId}`);
+        const commentText = commentInput.value;
+
+        if (commentText.trim() !== '') {
+            const commentsList = document.getElementById(`comments-${profileId}`);
+            const newComment = document.createElement('li');
+            newComment.textContent = commentText;
+            commentsList.appendChild(newComment);
+
+            // Clear the comment input
+            commentInput.value = '';
+        }
+    }
+</script>
+
 </script>
 
 {{!-- CSS Profile Results Page --}}
