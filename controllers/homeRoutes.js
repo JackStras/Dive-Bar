@@ -1,116 +1,135 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const { User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-// redner homepage if signed in
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        res.render('homepage');
-    } catch (err) {
-        res.status(500).json(err);
-    };
-});
+        const userData = await User.create(req.body);
 
-// withAuth to prevent access to users profile page
-router.get('/profile', withAuth, async (req, res) => {
-    try {
-        // Find the logged in user based on the session ID
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-        });
-
-        const user = userData.get({ plain: true });
-console.log(user)
-        res.render('profile', {
-            user,
-            loggedIn: true
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.loggedIn = true;
+            res.status(200).json(userData);
         });
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
     }
 });
 
-router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
+router.post('/login', async (req, res) => {
+    try {
+        const userData = await User.findOne({ where: { email: req.body.email } });
+
+        if (!userData) {
+            res
+                .status(400)
+                .json({ message: 'Incorrect email,  please try again' });
+            return;
+        }
+
+        const validPassword = await userData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res
+                .status(400)
+                .json({ message: 'Incorrect password, please try again' });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.email = userData.email;
+            req.session.loggedIn = true;
+
+            res.json({ user: userData, message: 'You are now logged in!' });
+        });
+
+    } catch (err) {
+        console.log(err)
+        res.status(400).json(err);
+    }
+});
+
+router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
     }
-
-    res.render('login');
 });
 
-router.get('/search', async (req,res) => {
+router.put('/:id', withAuth, async (req, res) => {
+    console.log('TEST')
     try {
-        if (req.session.loggedIn) {
-            res.render('search')
-        };
-    } catch (err) {
-        res.status(500).json(500)
-    };
-});
-
-router.get('/edit', withAuth, async (req, res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] }
-        })
-
-        const user = userData.get({ plain: true })
-
-        if (req.session.loggedIn) {
-            res.render('edit', {
-                ...user,
-                loggedIn: true
-            })
-        }
-    } catch (err) {
-        res.status(500).json(500)
-    }
-})
-
-router.get('/matches', async (req, res) => {
-    console.log(req.body)
-    const conditions = {
-        certifications: {
-            [Op.substring]: req.body.certifications,
-        },
-        gas_mixes: {
-            [Op.substring]: req.body.gas_mixes,
-        },
-        ow_dive_totals: {
-            [Op.gte]: parseInt(req.body.ow_dive_totals)
-        },
-    };
-    if (req.body.photography) {
-        conditions.photography = true
-    }
-    if (req.body.active_efr) {
-        conditions.active_efr = true
-    }
-    if (req.body.active_O2) {
-        conditions.active_O2 = true
-    }
-    if (req.body.active_dm) {
-        conditions.active_dm = true
-    }
-    if (req.body.active_instructor) {
-        conditions.active_instructor = true
-    }
-    console.log(conditions)
-    try {
-        // Get all divers that match search criteria
-        const userData = await User.findAll({
-          where: conditions
-         
-        }
+        const userData = await User.update(
+            {
+                certifications: req.body.certifications,
+                gas_mixes: req.body.gas_mixes,
+                ow_dive_totals: req.body.ow_dive_totals,
+                photography: req.body.photography,
+                active_efr: req.body.active_efr,
+                active_O2: req.body.active_O2,
+                active_dm: req.body.active_dm,
+                active_instructor: req.body.active_instructor
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
         );
-        const users = userData.map((user) => user.get({ plain: true }));
-        // res.render('matches', {users})
+        res.status(200).json(userData);
+        console.log(userData);
     } catch (err) {
-        console.error(err.stack)
+        console.error(err);
         res.status(500).json(err);
     }
 });
 
-module.exports = router;
+// router.get('/matches', async (req, res) => {
+//     console.log(req.body)
+//     const conditions = {
+//         certifications: {
+//             [Op.substring]: req.body.certifications,
+//         },
+//         gas_mixes: {
+//             [Op.substring]: req.body.gas_mixes,
+//         },
+//         ow_dive_totals: {
+//             [Op.gte]: parseInt(req.body.ow_dive_totals)
+//         },
+//     };
+//     if (req.body.photography) {
+//         conditions.photography = true
+//     }
+//     if (req.body.active_efr) {
+//         conditions.active_efr = true
+//     }
+//     if (req.body.active_O2) {
+//         conditions.active_O2 = true
+//     }
+//     if (req.body.active_dm) {
+//         conditions.active_dm = true
+//     }
+//     if (req.body.active_instructor) {
+//         conditions.active_instructor = true
+//     }
+//     console.log(conditions)
+//     try {
+//         // Get all divers that match search criteria
+//         const userData = await User.findAll({
+//           where: conditions
+
+//         }
+//         );
+//         const users = userData.map((user) => user.get({ plain: true }));
+//         // res.render('matches', {users})
+//     } catch (err) {
+//         console.error(err.stack)
+//         res.status(500).json(err);
+//     }
+// });
+
+// module.exports = router;
