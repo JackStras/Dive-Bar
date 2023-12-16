@@ -1,7 +1,7 @@
 <div id="search" class="boxed">
     <h2 class="heading">Search Divers</h2>
     <div class="content">
-        <form method="get" action="#">
+        <form method="get" action="#" class="form">
             <div>
                 <input type="text" id="ow-dive-form" name="search-input" placeholder="Number of Dives..." />
 
@@ -13,7 +13,7 @@
                         <label for="check2"><input type="checkbox" id="efr-form" name="Active EFR"> Active Emergencry
                             first responder</label>
                         <label for="check4"><input type="checkbox" id="O2-form" name="Active O2"> Active O2
-                            Adminsitrator</label>
+                            Provider</label>
                         <label for="check5"><input type="checkbox" id="dm-form" name="Active DM"> Active Dive
                             Master</label>
                         <label for="check6"><input type="checkbox" id="instructor-form" name="Active Instructor"> Active
@@ -21,14 +21,14 @@
 
                     </div>
 
-                    <label for="dropdown1">GAS MIXES</label>
+                    <label for="dropdown1">Gas Mixes</label>
                     <select id="gas-mixes-form" name="dropdown1">
                         <option value="Air">Air</option>
                         <option value="Nitrox">Nitrox</option>
                         <option value="Tri-Mix"> Tri-Mix</option>
                     </select>
 
-                    <label for="dropdown3">CERTIFICATIONS:</label>
+                    <label for="dropdown3">Certifications:</label>
                     <select id="certification-form" name="dropdown3">
                         <option value="Open Water">Open Water</option>
                         <option value="Advanced Open Water">Advanced Open Water</option>
@@ -51,5 +51,7 @@
 <div class="search-results">
 
 </div>
+
+<div id="matching-users-container"></div>
 
 <script src="./js/matching.js"></script>

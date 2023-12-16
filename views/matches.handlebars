@@ -1,88 +1,83 @@
-
-
-
-
-
-
-<header>
-    <div id="wrapper">
-        <div id="header">
-            <h1>DIVE BAR</h1>
-        </div>
+{{!-- <header>
+  <div id="wrapper">
+    <div id="header">
+      <h1>DIVE BAR</h1>
     </div>
+  </div>
 </header>
 
 <h2 class="title">Find your DIVE community</h2>
 <div class="story"></div>
 
 <div class="topnav" id="topnav">
-    <a href="#home" >Home</a>
-    <a href="#news">Profile</a>
-    <a href="#contact"class="active"> Divers</a>
-    <a href="#about">Settings</a>
-</div>
-{{#each users as |user|}}
-{{!--   {{> Username-details}} --}}
-<h2>{{user.username}}</h2>
-<h2>{{user.gas_mixes}}</h2>
-<h2>{{user.certifications}}</h2>
-{{/each}}
-
-<div class="container clearfix">
+  <a href="#home">Home</a>
+  <a href="#news">Profile</a>
+  <a href="#contact" class="active"> Divers</a>
+  <a href="#about">Settings</a>
+</div> --}}
 
 
-<!-- Profile Results column -->
-<div class="profile-column" id="profile-results">
-</div>
 
-<script src="/js/matching.js"></script>
-<!-- JS form for updated profile results -->
-<script>
+
+<div id="'user-container"></div>
+
+
+
+
+{{!-- <div class="container clearfix"> --}}
+
+
+  <!-- Profile Results column -->
+  {{!-- <div class="profile-column" id="profile-results">
+  </div>
+
+  <!-- JS form for updated profile results -->
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('search-form').addEventListener('submit', function (event) {
-            event.preventDefault();
+      document.getElementById('search-form').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            
-            const selectedOptions = {
-                photography: document.getElementById('check1').checked,
-                active: document.getElementById('check2').checked,
-                efr: document.getElementById('check3').checked,
-                activeO2: document.getElementById('check4').checked,
-                activeDM: document.getElementById('check5').checked,
-                activeInstructor: document.getElementById('check6').checked,
-                gasMix: document.getElementById('dropdown1').value,
-                certification: document.getElementById('dropdown3').value
-            };
 
-            // function to update profile results with selections
-            updateProfileResults(selectedOptions);
-        });
+        const selectedOptions = {
+          photography: document.getElementById('check1').checked,
+          active: document.getElementById('check2').checked,
+          efr: document.getElementById('check3').checked,
+          activeO2: document.getElementById('check4').checked,
+          activeDM: document.getElementById('check5').checked,
+          activeInstructor: document.getElementById('check6').checked,
+          gasMix: document.getElementById('dropdown1').value,
+          certification: document.getElementById('dropdown3').value
+        };
 
-        // update the profile results based on selected options
-        function updateProfileResults(options) {
-            const profileResultsDiv = document.getElementById('profile-results');
+        // function to update profile results with selections
+        updateProfileResults(selectedOptions);
+      });
 
-            // Clear out existing 
-            profileResultsDiv.innerHTML = '';
+      // update the profile results based on selected options
+      function updateProfileResults(options) {
+        const profileResultsDiv = document.getElementById('profile-results');
 
-            // create new profile views
-            for (let i = 1; i <= 12; i++) {
-                const profileView = createProfileView(`FirstName${i} LastName${i}`, `Place of origin ${i}`, `I love to XYZ ${i}`);
-                profileResultsDiv.appendChild(profileView);
-            }
+        // Clear out existing 
+        profileResultsDiv.innerHTML = '';
+
+        // create new profile views
+        for (let i = 1; i <= 12; i++) {
+          const profileView = createProfileView(`FirstName${i} LastName${i}`, `Place of origin ${i}`, `I love to XYZ ${i}`);
+          profileResultsDiv.appendChild(profileView);
         }
+      }
 
-        // create a new profile view with given data
-        function createProfileView(fullName, location, aboutMe) {
-            const newProfileView = document.createElement('div');
-            newProfileView.classList.add('profile-view');
+      // create a new profile view with given data
+      function createProfileView(fullName, location, aboutMe) {
+        const newProfileView = document.createElement('div');
+        newProfileView.classList.add('profile-view');
 
-            //  replace profile data with actual data
-            const profileImageSrc = `profile${Math.floor(Math.random() * 5) + 1}-image.jpg`; 
-            // Random profile image not in folders 
+        //  replace profile data with actual data
+        const profileImageSrc = `profile${Math.floor(Math.random() * 5) + 1}-image.jpg`;
+        // Random profile image not in folders 
 
-            // Update the content of the new profile view
-            newProfileView.innerHTML = `
+        // Update the content of the new profile view
+        newProfileView.innerHTML = `
                 <h2 class="heading">${fullName}</h2>
                 <div class="content">
                     <img src="${profileImageSrc}" alt="${fullName}'s Profile Image">
@@ -92,120 +87,121 @@
                 </div>
             `;
 
-            return newProfileView;
-        }
+        return newProfileView;
+      }
     });
-</script>
+  </script> --}}
 
-<script>
+  {{!--
+  <script>
     function openProfileSettings() {
-        document.getElementById('profileSettings').style.display = 'block';
+      document.getElementById('profileSettings').style.display = 'block';
     }
 
     function toggleProfileSettings() {
-        document.getElementById('profileSettings').style.display = 'none';
+      document.getElementById('profileSettings').style.display = 'none';
     }
 
 
     // Function to add a comment to a profile
     function addComment(profileId) {
-        const commentInput = document.getElementById(`comment-${profileId}`);
-        const commentText = commentInput.value;
+      const commentInput = document.getElementById(`comment-${profileId}`);
+      const commentText = commentInput.value;
 
-        if (commentText.trim() !== '') {
-            const commentsList = document.getElementById(`comments-${profileId}`);
-            const newComment = document.createElement('li');
-            newComment.textContent = commentText;
-            commentsList.appendChild(newComment);
+      if (commentText.trim() !== '') {
+        const commentsList = document.getElementById(`comments-${profileId}`);
+        const newComment = document.createElement('li');
+        newComment.textContent = commentText;
+        commentsList.appendChild(newComment);
 
-            // Clear the comment input
-            commentInput.value = '';
-        }
+        // Clear the comment input
+        commentInput.value = '';
+      }
     }
-</script>
+  </script>
 
-</script>
+  </script> --}}
 
-{{!-- CSS Profile Results Page --}}
-{{!-- body, h1, h2, h3, p, ul, li {
+  {{!-- CSS Profile Results Page --}}
+  {{!-- body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
-}
+  }
 
-body {
+  body {
   font-family: 'Arial', sans-serif;
-  background-color: #004D40; 
-    color: #fff; 
-}
+  background-color: #004D40;
+  color: #fff;
+  }
 
-#wrapper {
+  #wrapper {
   width: 80%;
   margin: 0 auto;
-}
+  }
 
-.header {
+  .header {
   background-color:#004D40;
   color: #fff;
   padding: 10px;
   text-align: center;
-}
+  }
 
-.title {
+  .title {
   text-align: center;
   margin: 20px 0;
-}
+  }
 
-.container {
+  .container {
   display: flex;
   justify-content: space-between;
-}
+  }
 
-/* Search Form Styles */
-.search-column {
+  /* Search Form Styles */
+  .search-column {
   width: 30%;
-}
+  }
 
-#search {
+  #search {
   background-color:white ;
   padding: 20px;
   border-radius: 5px;
-}
+  }
 
-.heading {
+  .heading {
   text-align: center;
   font-size: 18px;
   margin-bottom: 10px;
-}
+  }
 
-.content {
+  .content {
   display: flex;
   flex-direction: column;
-}
+  }
 
-label, select, input {
+  label, select, input {
   margin-bottom: 10px;
-}
+  }
 
-input[type="text"], select {
+  input[type="text"], select {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
-}
+  }
 
-input[type="submit"] {
+  input[type="submit"] {
   background-color: #333;
   color: #fff;
   padding: 10px;
   cursor: pointer;
-}
+  }
 
-/* Profile Results Styles */
-.profile-column {
+  /* Profile Results Styles */
+  .profile-column {
   width: 100%;
   text-align: center;
-}
+  }
 
-.profile-view {
+  .profile-view {
   display: inline-block;
   width: 100%; /* Full width for small screens, one column */
   margin: 10px;
@@ -213,42 +209,42 @@ input[type="submit"] {
   padding: 20px;
   border-radius: 5px;
   text-align: center; /* Center text within each profile box */
-}
-
-@media (min-width: 768px) {
-  .profile-view {
-      width: 48%; 
   }
-}
 
-.profile-view img {
+  @media (min-width: 768px) {
+  .profile-view {
+  width: 48%;
+  }
+  }
+
+  .profile-view img {
   max-width: 100%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 10px;
-}
+  }
 
-.content h3,
-.content p {
+  .content h3,
+  .content p {
   margin-bottom: 10px;
-}
+  }
 
-.profile-view h2,
-.profile-view h3,
-.profile-view p {
+  .profile-view h2,
+  .profile-view h3,
+  .profile-view p {
   color: #fff;
-}
+  }
 
-.topnav {
+  .topnav {
   background-color: white;
   overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
   width: 200px;
-}
+  }
 
-.topnav a {
+  .topnav a {
   display: block;
   color: darkblue;
   text-align: center;
@@ -256,9 +252,9 @@ input[type="submit"] {
   text-decoration: none;
   font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
   border: 1px solid black;
-}
+  }
 
-.topnav a:hover {
+  .topnav a:hover {
   background-color: #ddd;
   color: black;
-} --}}
+  } --}}
