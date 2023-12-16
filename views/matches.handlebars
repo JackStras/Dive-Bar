@@ -1,18 +1,8 @@
-{{#each Username as |Username|}}
-{{!--   {{> Username-details}} --}}
-{{/each}}
 
 
-{{!-- HTML Profile Results Page --}}
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>THE DIVE BAR</title>
-</head>
-<body>
+
+
+
 
 <header>
     <div id="wrapper">
@@ -31,7 +21,12 @@
     <a href="#contact"class="active"> Divers</a>
     <a href="#about">Settings</a>
 </div>
-
+{{#each users as |user|}}
+{{!--   {{> Username-details}} --}}
+<h2>{{user.username}}</h2>
+<h2>{{user.gas_mixes}}</h2>
+<h2>{{user.certifications}}</h2>
+{{/each}}
 
 <div class="container clearfix">
 
@@ -40,6 +35,7 @@
 <div class="profile-column" id="profile-results">
 </div>
 
+<script src="/js/matching.js"></script>
 <!-- JS form for updated profile results -->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -110,8 +106,6 @@
         document.getElementById('profileSettings').style.display = 'none';
     }
 </script>
-</body>
-</html>  --}}
 
 {{!-- CSS Profile Results Page --}}
 {{!-- body, h1, h2, h3, p, ul, li {
@@ -248,5 +242,4 @@ input[type="submit"] {
 .topnav a:hover {
   background-color: #ddd;
   color: black;
-}
- --}}
+} --}}
