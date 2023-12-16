@@ -1,8 +1,6 @@
 const displayMatchingUsers = (users) => {
-    // Assuming you have a container in your HTML with the id 'matching-users-container'
     const container = document.querySelector('#matching-users-container');
 
-    // Clear the container before displaying new data
     container.innerHTML = '';
 
     // Iterate through the users and create elements to display the data
@@ -50,7 +48,6 @@ const displayMatchingUsers = (users) => {
         container.appendChild(userElement);
     });
 
-    // Optionally, you can show a message if there are no matching users
     if (users.length === 0) {
         const noUsersMessage = document.createElement('p');
         noUsersMessage.textContent = 'No matching users found.';
@@ -80,7 +77,7 @@ let matchingFormHandler = async (event) => {
         active_dm: active_dmVal,
         active_instructor: active_instructorVal
     }
-    
+
     const response = await fetch(`/api/divers`, {
         method: 'POST',
         headers: {
