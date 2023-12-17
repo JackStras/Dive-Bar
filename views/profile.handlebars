@@ -1,101 +1,33 @@
-<div class="UserName">  
-{{#if loggedIn}}
-<section class="user">
-{{!-- <h2>Welcome, {{user.username}}!</h2>
-</div>
-<div>
-owDiveTotals: {{user.ow_dive_totals}}
-</div> --}}
-{{!-- <div>
-  {{user.certifications}}
-</div>
-<div> 
-  {{user.gas_mixes}} --}}
-</div>
-{{!-- <div> 
-  {{user.cave_dive_totals}}
-</div>
-<div> 
-  {{user.night_dive_totals}}
-</div>
-<div> 
-  {{user.shark_dive_totals}}
-</div>
-<div> 
-  {{user.wreck_dive_totals}}
-</div>
-<div> 
-  {{user.drift_dive_totals}}
-</div>
-<div> 
-  {{user.altitude_dive_totals}}
-</div>
-<div> 
-  {{user.photography}}
-</div>
-<div> 
-  {{user.tech_dive_totals}}
-</div>
-<div> 
-  {{user.active_instructor}}
-</div> --}}
-
-
-<div>
-  
-</div>
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Date and Dive:</h3>
-
-<div class="boxed">
-  <a href="#"></a>
+<div class="UserName">
+  {{#if loggedIn}}
+  <section class="user">
+    <h2>Welcome, {{user.username}}!</h2>
+    <p id="profileCertifications">Certifications: {{user.certifications}}</p>
+    <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
+    <p>Total Dives: {{user.ow_dive_totals}}</p>
+    <p>Photographer: {{user.photography}}</p>
+    <p>Active Emergency First Responder: {{user.active_efr}}</p>
+    <p>Active O2: {{user.active_O2}}</p>
+    <p>Active Dive Master: {{user.active_dm}}</p>
+    <p>Active Instructor: {{user.active_instructor}}</p>
+  </section>
+  {{/if}}
 </div>
 
+{{#if threads.length}}
+<div class="col-md-6 project-list">
+  <h3>Current Threads:</h3>
 
-
-  <form class="Find-your-Date">
-      <div class="form-group">
-        <label for="DiveDates">profile name:</label>
-        <input class="form-input" type="text" id="DiveDates" name="DiveDates" />
-      </div>
-
-  <div class="form-group">
-        <label for="find-dates">dates needed:</label>
-        <input class="form-input" type="number" id="project-dating" name="project-dating" />
-      </div>
-
- <div class="form-group">
-        <label for="date-type">description:</label>
-        <textarea class="form-input" id="date-type" name="date-type"></textarea>
-      </div>
-
-  <div class="form-group">
-        <button type="submit" class="btn btn-primary">Get Date</button>
-      </div>
-    </form>
+  {{#each threads as |thread|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/project/{{threads.id}}"></a></h4>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-sm btn-danger" data-id="{{threads.id}}">DELETE</button>
+    </div>
   </div>
-
-{{!-- 
-  <div class="UserName -details">
-    <h3> {{{"Title Goes Here"}}} </h3>
-    <p>By:UserName Goes Here</p>
-    <p>Date and Dive: Dates goes here </p>
-  </div>
-</section>
-<!-- Otherwise, provide a link to login -->
-{{else}}
-<a href="/login">You must login first to Date</a>
-{{/if}}  --}}
+  {{/each}}
+</div>
 {{/if}}
-
-
-<div class="form-group">
-        <button id="logout" type="submit" class="btn btn-primary">Logout</button>
-
-      </div>
-
-<script src="./js/logout.js"></script>
-
-
-<script src="./js/profile.js"></script>
+</div>
