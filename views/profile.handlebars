@@ -21,13 +21,12 @@
   {{#each threads as |thread|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <div>{{threads.id}}"</div>
+      <div>{{thread.id}}"</div>
     </div>
     <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id="{{threads.id}}">DELETE</button>
+      <button class="btn btn-sm btn-danger" data-id={{thread.comment}}>DELETE</button>
     </div>
   </div>
   {{/each}}
 </div>
 {{/if}}
-</div>

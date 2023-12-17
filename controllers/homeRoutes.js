@@ -18,19 +18,20 @@ router.get('/', async (req, res) => {
 
 
 // withAuth to prevent access to users profile page
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [Threads]
+            include: [{model: Threads}],
         });
 
         const user = userData.get({ plain: true });
         console.log(user)
+        // res.status(200).json(user)
         res.render('profile', {
-            user,
-            loggedIn: true
+            ...user,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
@@ -47,18 +48,18 @@ router.get('/search', async (req, res) => {
     };
 });
 
-router.get('/user_profile/:id', async (req, res) => {
+router.get('/user_profile/:id', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.params.id, {
             attributes: { exclude: ['password'] },
-            include: [Threads]
+            include: [{model: Threads}],
         })
 
         const user = userData.get({ plain: true });
         console.log(user)
         res.render('user_profile', {
-            user,
-            loggedIn: true
+            ...user,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
         res.status(500).json(err);
