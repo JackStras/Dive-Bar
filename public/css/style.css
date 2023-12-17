@@ -93,12 +93,15 @@
  #footer {
      border-top: 1px dotted #004D40;
      font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
-     color: black;
+     color: white;
      margin-top: auto;
      padding: 10px;
      text-align: center;
      position: fixed;
      bottom: 0;
      width: 100%;
+     font-size: 1.25rem;
+     font-weight: bold;
+     text-shadow: 2px 2px black;
  } 
   
