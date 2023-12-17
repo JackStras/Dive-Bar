@@ -1,7 +1,7 @@
 <div class="UserName">
   {{#if loggedIn}}
   <section class="user">
-    <h2>Welcome, {{user.username}}!</h2>
+    <h2>{{user.username}}!</h2>
     <p id="profileCertifications">Certifications: {{user.certifications}}</p>
     <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
     <p>Total Dives: {{user.ow_dive_totals}}</p>
@@ -21,7 +21,7 @@
   {{#each threads as |thread|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <h4><a href="/project/{{threads.id}}"></a></h4>
+      <div>{{threads.id}}"</div>
     </div>
   </div>
   {{/each}}
