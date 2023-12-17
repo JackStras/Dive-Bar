@@ -1,7 +1,10 @@
  body {
      padding-left: 11em;
      font-family: Georgia, "Times New Roman", Times, serif;
-     color: rgb(170, 198, 211);
+     color: rgba(255, 255, 255, 0.863);
+     font-size:1.25rem;
+     font-weight: bold;
+     text-shadow: 2px 2px black;
      background-image: url(images/coral_underwater_sea_tropical_islands_coast_hd_ocean.jpg);
      background-repeat: no-repeat;
      background-size: cover;
@@ -62,6 +65,7 @@
  
  .topnav a {
      display: block;
+     text-shadow: none;
      color: black; 
      text-align: center;
      padding: 14px 16px;
