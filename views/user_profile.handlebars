@@ -1,0 +1,30 @@
+<div class="UserName">
+  {{#if loggedIn}}
+  <section class="user">
+    <h2>Welcome, {{user.username}}!</h2>
+    <p id="profileCertifications">Certifications: {{user.certifications}}</p>
+    <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
+    <p>Total Dives: {{user.ow_dive_totals}}</p>
+    <p>Photographer: {{user.photography}}</p>
+    <p>Active Emergency First Responder: {{user.active_efr}}</p>
+    <p>Active O2: {{user.active_O2}}</p>
+    <p>Active Dive Master: {{user.active_dm}}</p>
+    <p>Active Instructor: {{user.active_instructor}}</p>
+  </section>
+  {{/if}}
+</div>
+
+{{#if threads.length}}
+<div class="col-md-6 project-list">
+  <h3>Current Threads:</h3>
+
+  {{#each threads as |thread|}}
+  <div class="row mb-2">
+    <div class="col-md-8">
+      <h4><a href="/project/{{threads.id}}"></a></h4>
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{/if}}
+</div>
