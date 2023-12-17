@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
     };
 });
 
+
 // withAuth to prevent access to users profile page
 router.get('/profile', withAuth, async (req, res) => {
     try {
@@ -62,6 +63,18 @@ router.get('/edit', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(500)
     }
+})
+
+router.get('*', async (req, res) => {
+    try {
+        if (!req.session.loggedIn) {
+            res.render('homepage');
+        } else {
+            res.redirect('/profile')
+        }
+    } catch (err) {
+        res.status(500).json(err);
+    };
 })
 
 module.exports = router;
