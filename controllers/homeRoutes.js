@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Threads } = require('../models');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
 
@@ -22,6 +22,7 @@ router.get('/profile', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
+            include: [Threads]
         });
 
         const user = userData.get({ plain: true });
@@ -44,6 +45,24 @@ router.get('/search', async (req, res) => {
         res.status(500).json(500)
     };
 });
+
+router.get('/user_profile/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            attributes: { exclude: ['password'] },
+            include: [Threads]
+        })
+
+        const user = userData.get({ plain: true });
+        console.log(user)
+        res.render('user_profile', {
+            user,
+            loggedIn: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 router.get('/edit', withAuth, async (req, res) => {
     try {

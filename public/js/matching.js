@@ -17,6 +17,9 @@ const displayMatchingUsers = (users) => {
         // Create separate divs for each value
         const usernameDiv = document.createElement('div');
         usernameDiv.textContent = `Username: ${user.username}`;
+        usernameDiv.addEventListener('click', function() {
+            document.location.replace(`user_profile/${user.id}`)
+        })
 
         const certificationsDiv = document.createElement('div');
         certificationsDiv.textContent = `Certifications: ${user.certifications}`;
