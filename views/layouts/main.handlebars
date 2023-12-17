@@ -1,17 +1,31 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  
-  <link rel="stylesheet" type="text/css" href="/public/css/style.css">
-
+  <title>Dive-Bar</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
+
+<nav class="topnav" id="Topnav">
+  {{#if loggedIn}}
+  <a href="./homepage" class="active">Home</a>
+  <a href="./profile">Profile</a>
+  <a href="./search">Divers</a>
+  <a href="./edit">Edit Profile</a>
+  <a href="./homepage" class="no-button" id="logout">logout</a>
+  {{/if}}
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</nav>
+
 {{{body}}}
 
 
-</html> 
+
+
+</html>

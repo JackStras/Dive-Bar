@@ -17,7 +17,8 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: 'Diver Down',
   cookie: {
-    maxAge: 300000,
+    expiration: 60 * 60 * 60 * 1000,
+    maxAge: 1000000,
     httpOnly: true,
     secure: false,
     sameSite: 'strict',

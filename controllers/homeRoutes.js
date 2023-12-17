@@ -6,7 +6,11 @@ const { Op } = require('sequelize');
 // redner homepage if signed in
 router.get('/', async (req, res) => {
     try {
-        res.render('homepage');
+        if (!req.session.loggedIn) {
+            res.render('homepage');
+        } else {
+            res.redirect('/profile')
+        }
     } catch (err) {
         res.status(500).json(err);
     };
@@ -21,7 +25,7 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-console.log(user)
+        console.log(user)
         res.render('profile', {
             user,
             loggedIn: true
@@ -41,7 +45,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/search', async (req,res) => {
+router.get('/search', async (req, res) => {
     try {
         if (req.session.loggedIn) {
             res.render('search')
@@ -103,7 +107,7 @@ router.get('/edit', withAuth, async (req, res) => {
 //         // Get all divers that match search criteria
 //         const userData = await User.findAll({
 //           where: conditions
-         
+
 //         }
 //         );
 //         const users = userData.map((user) => user.get({ plain: true }));
