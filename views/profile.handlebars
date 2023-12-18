@@ -1,32 +1,34 @@
 <div class="UserName">
   {{#if loggedIn}}
-  <section class="user">
-    <h2>Welcome, {{user.username}}!</h2>
-    <p id="profileCertifications">Certifications: {{user.certifications}}</p>
-    <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
-    <p>Total Dives: {{user.ow_dive_totals}}</p>
-    <p>Photographer: {{user.photography}}</p>
-    <p>Active Emergency First Responder: {{user.active_efr}}</p>
-    <p>Active O2: {{user.active_O2}}</p>
-    <p>Active Dive Master: {{user.active_dm}}</p>
-    <p>Active Instructor: {{user.active_instructor}}</p>
-  </section>
+  <ul class="list-group">
+    <li class="list-group-item custom_li"><h2>Welcome, {{user.username}}!</h2></li>
+    <li class="list-group-item custom_li">Certifications: {{user.certifications}}</li>
+    <li class="list-group-item custom_li">Gas Mixes: {{user.gas_mixes}}</li>
+    <li class="list-group-item custom_li">Total Dives: {{user.ow_dive_totals}}</li>
+    <li class="list-group-item custom_li">Photographer: {{user.photography}}</li>
+    <li class="list-group-item custom_li">Active Emergency First Responder: {{user.active_efr}}</li>
+    <li class="list-group-item custom_li">Active O2: {{user.active_O2}}</li>
+    <li class="list-group-item custom_li">Active Dive Master: {{user.active_dm}}</li>
+    <li class="list-group-item custom_li">Active Instructor: {{user.active_instructor}}</li>
+  </ul>
   {{/if}}
 </div>
 
 {{#if user.threads.length}}
-<div class="col-md-6 project-list">
-  <h3>Current Threads:</h3>
+<div class="col-md-6 comments">
+  <h3>Comments:</h3>
 
   {{#each user.threads as |thread|}}
-  <div class="row mb-2">
-    <div class="col-md-8">
-      <div>{{thread.comment}}"</div>
-    </div>
-    <div class="col-md-4">
-      <button class="btn btn-sm btn-danger" data-id={{thread.comment}}>DELETE</button>
-    </div>
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item">{{thread.comment}}
+      <div class="input-group input-group-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg"></span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg">
+        <input class="btn btn-primary" type="submit" value="Reply">
+      </div>
+    </li>
+  </ul>
   {{/each}}
 </div>
 {{/if}}
