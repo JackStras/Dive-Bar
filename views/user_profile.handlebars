@@ -1,7 +1,7 @@
 <div class="UserName">
   {{#if loggedIn}}
   <section class="user">
-    <h2>{{user.username}}!</h2>
+    <h2>Welcome!!</h2>
     <p id="profileCertifications">Certifications: {{user.certifications}}</p>
     <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
     <p>Total Dives: {{user.ow_dive_totals}}</p>
@@ -21,7 +21,7 @@
   {{#each threads as |thread|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <div>{{threads.id}}"</div>
+      <h4>{{thread.comment}}</h4>
     </div>
   </div>
   {{/each}}
