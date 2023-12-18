@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { User, Threads } = require('../../models');
 const { Op } = require('sequelize')
 const withAuth = require('../../utils/auth');
-const chalk = require('chalk');
+
 
 router.post('/', withAuth, async (req, res) => {
-    console.log(chalk.blue.bold('Data passed to backend:'), req.body);
+    console.log(req.body);
     const conditions = {
         certifications: {
             [Op.substring]: req.body.certifications,
@@ -44,10 +44,10 @@ router.post('/', withAuth, async (req, res) => {
             return { ...plainUser, username: user.username };
         });
 
-        console.log(chalk.blue.bold('Data passed to template:'), { users });
+        console.log(users);
         res.status(200).json(users);
     } catch (err) {
-        console.error(chalk.red.bold(err.stack));
+        console.error(err.stack);
         res.status(500).json({ error: 'Internal Server Error', message: err.message });
     }
 });
