@@ -1,7 +1,10 @@
+console.log('script loaded')
+
 let commentEventHandler = async (event) => {
     event.preventDefault();
 
-    let commentVal = document.querySelector('#dialogue').value;
+    let commentVal = document.querySelector('#dialogue').value.trim();
+    
 
     const userId = document.getElementById('userComment').dataset.userid;
 

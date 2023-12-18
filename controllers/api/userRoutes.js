@@ -90,7 +90,7 @@ router.put('/:id', withAuth, async (req, res) => {
 
 router.post('/comments', withAuth, async (req, res) => {
     try {
-        const commentData = await Threads.create(
+        const commentData = await Threads.create(req.body,
             {
                 attributes: { exclude: ['password'] },
                 include: [{ model: User }],
