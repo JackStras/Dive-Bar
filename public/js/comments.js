@@ -1,5 +1,3 @@
-console.log('script loaded')
-
 let commentEventHandler = async (event) => {
     event.preventDefault();
 

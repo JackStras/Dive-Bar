@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Threads } = require('../../models');
 const withAuth = require('../../utils/auth');
+const chalk = require('chalk');
 
 router.post('/', async (req, res) => {
     try {
@@ -45,7 +46,7 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
-        console.log(err)
+        console.log(chalk.hex('#FF0000').bold(err))
         res.status(400).json(err);
     }
 });
@@ -61,7 +62,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-    console.log('TEST')
     try {
         const userData = await User.update(
             {
@@ -81,7 +81,7 @@ router.put('/:id', withAuth, async (req, res) => {
             }
         );
         res.status(200).json(userData);
-        console.log(userData);
+        console.log(chalk.blue.bolduserData);
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -100,8 +100,9 @@ router.post('/comments', withAuth, async (req, res) => {
             })
         res.status(200).json(commentData)
     } catch (err) {
-        console.log(err)
+        console.log(chalk.red.bold(err))
         res.status(500).json(err)
     }
 })
+
 module.exports = router;

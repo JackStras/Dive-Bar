@@ -1,6 +1,5 @@
 let editFormHandler = async (event) => {
     event.preventDefault()
-    console.log("Work")
 
     let selectedCerts = document.querySelectorAll('#certification-form option:checked')
     let arrayCerts = Array.from(selectedCerts).map(el => el.value)
@@ -45,6 +44,7 @@ let editFormHandler = async (event) => {
         alert(response.statusText)
     }
 }
+
 document
     .querySelector('.form')
     .addEventListener('submit', editFormHandler);

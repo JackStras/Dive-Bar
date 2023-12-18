@@ -98,10 +98,6 @@ let matchingFormHandler = async (event) => {
     }
 };
 
-// document
-//     .querySelector('.form')
-//     .addEventListener('submit', matchingFormHandler);
-
 document
     .querySelector('form')
     .addEventListener('submit', matchingFormHandler);
