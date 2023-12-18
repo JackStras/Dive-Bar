@@ -104,4 +104,11 @@
      font-weight: bold;
      text-shadow: 2px 2px black;
  } 
-  
+
+ .input-group-text {
+    text-shadow: none;
+ }
+
+ .list-group-item {
+    text-shadow: none;
+ }
