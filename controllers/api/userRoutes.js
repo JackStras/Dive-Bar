@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
-        console.log(chalk.hex('#FF0000').bold(err))
+        console.log(err)
         res.status(400).json(err);
     }
 });
@@ -81,7 +81,7 @@ router.put('/:id', withAuth, async (req, res) => {
             }
         );
         res.status(200).json(userData);
-        console.log(chalk.blue.bolduserData);
+        console.log(userData);
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
@@ -100,7 +100,7 @@ router.post('/comments', withAuth, async (req, res) => {
             })
         res.status(200).json(commentData)
     } catch (err) {
-        console.log(chalk.red.bold(err))
+        console.log(err)
         res.status(500).json(err)
     }
 })
