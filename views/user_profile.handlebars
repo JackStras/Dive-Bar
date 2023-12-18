@@ -1,37 +1,63 @@
 <div class="UserName">
   {{#if loggedIn}}
-  <section class="user">
-    <h2>{{user.username}}</h2>
-    <p id="profileCertifications">Certifications: {{user.certifications}}</p>
-    <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
-    <p>Total Dives: {{user.ow_dive_totals}}</p>
-    <p>Photographer: {{user.photography}}</p>
-    <p>Active Emergency First Responder: {{user.active_efr}}</p>
-    <p>Active O2: {{user.active_O2}}</p>
-    <p>Active Dive Master: {{user.active_dm}}</p>
-    <p>Active Instructor: {{user.active_instructor}}</p>
-  </section>
+  <ul class="list-group">
+    <li class="list-group-item custom_li">
+      <h1>{{user.username}}</h1>
+    </li>
+    <li class="list-group-item custom_li">Certifications: {{user.certifications}}</li>
+    <li class="list-group-item custom_li">Gas Mixes: {{user.gas_mixes}}</li>
+    <li class="list-group-item custom_li">Total Dives: {{user.ow_dive_totals}}</li>
+    <li class="list-group-item custom_li">Photographer: {{user.photography}}</li>
+    <li class="list-group-item custom_li">Active Emergency First Responder: {{user.active_efr}}</li>
+    <li class="list-group-item custom_li">Active O2: {{user.active_O2}}</li>
+    <li class="list-group-item custom_li">Active Dive Master: {{user.active_dm}}</li>
+    <li class="list-group-item custom_li">Active Instructor: {{user.active_instructor}}</li>
+  </ul>
   {{/if}}
 </div>
 
 {{#if user.threads.length}}
-<div class="col-md-6 comments">
+<form id="commentForm">
+  <div class="col-md-6 comments" id="comments">
+    <h2>Start a conversation by leaving a Comment!</h2>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+      id="dialogue">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Comment" id="submitComment">
   <h3>Comments:</h3>
-
   {{#each user.threads as |thread|}}
   <ul class="list-group">
     <li class="list-group-item">{{thread.comment}}
       <div class="input-group input-group-lg">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+        <span class="input-group-text" id="inputGroup-sizing-lg"></span>
         <input type="text" class="form-control" aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-lg">
         <input class="btn btn-primary" type="submit" value="Reply">
       </div>
     </li>
   </ul>
-  {{/each}}
-</div>
+</form>
+{{/each}}
 {{/if}}
+
+<p id="userComment" data-userId="{{id}}"></p>
+<script src="./js/comments.js"></script>
+
+
+
+{{!-- <section class="user">
+  <h2>{{user.username}}</h2>
+  <p>Certifications: {{user.certifications}}</p>
+  <p>Gas Mixes: {{user.gas_mixes}}</p>
+  <p>Total Dives: {{user.ow_dive_totals}}</p>
+  <p>Photographer: {{user.photography}}</p>
+  <p>Active Emergency First Responder: {{user.active_efr}}</p>
+  <p>Active O2: {{user.active_O2}}</p>
+  <p>Active Dive Master: {{user.active_dm}}</p>
+  <p>Active Instructor: {{user.active_instructor}}</p>
+</section>
+
+
 
 
 
@@ -45,3 +71,4 @@
     </div>
   </div>
 </div> --}}
+

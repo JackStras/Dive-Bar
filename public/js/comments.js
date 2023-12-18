@@ -1,8 +1,36 @@
-const reply = document.getElementsByTagName('button')
+let commentEventHandler = async (event) => {
+    event.preventDefault();
 
-const replyHandler = (comments) => {
-}
+    let commentVal = document.querySelector('#dialogue').value;
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', replyHandler)
-}
+    const userId = document.getElementById('userComment').dataset.userid;
+
+    const data = {
+        comment: commentVal
+    };
+    const response = await fetch('/api/users/comments', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+    console.log(data)
+    if (response.ok) {
+        console.log("RESPONSE OK");
+        location.reload();
+    }
+};
+
+document
+    .querySelector('#commentForm')
+    .addEventListener('submit', commentEventHandler)
+
+// const reply = document.getElementsByTagName('button')
+
+// const replyHandler = (comments) => {
+// }
+
+// for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].addEventListener('click', replyHandler)
+// }

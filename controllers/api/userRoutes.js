@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Threads } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
@@ -87,4 +87,21 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.post('/comments', withAuth, async (req, res) => {
+    try {
+        const commentData = await Threads.create(
+            {
+                attributes: { exclude: ['password'] },
+                include: [{ model: User }],
+                where: {
+                    id: req.body.user_id
+                }
+            })
+        res.status(200).json(commentData)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json(err)
+    }
+})
 module.exports = router;
