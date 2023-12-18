@@ -80,7 +80,6 @@ It's done when I can provide and view information about boat ownership in my pro
 April Hunt
 Chris Stasney
 Eliceo Soto
-Isaiah Leduc
 Jack Strasbaugh
 
 

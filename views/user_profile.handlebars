@@ -27,6 +27,7 @@
   <h3>Comments:</h3>
   {{#each user.threads as |thread|}}
   <ul class="list-group">
+    <a href="/user_profile/{{thread.poster_id}}">{{thread.poster}}</a>
     <li class="list-group-item">{{thread.comment}}
       <div class="input-group input-group-lg">
         <span class="input-group-text" id="inputGroup-sizing-lg"></span>
@@ -41,6 +42,8 @@
 {{/if}}
 
 <p id="userComment" data-userId="{{user.id}}"></p>
+<p id="loggedInUser" data-loggedUser="{{logged_user.username}}"></p>
+<p id="loggedUserId" data-loggedId="{{logged_user.id}}"></p>
 <script src="/js/comments.js"></script>
 
 
