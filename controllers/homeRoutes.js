@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 
 // withAuth to prevent access to users profile page
-router.get('/profile', async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
@@ -38,7 +38,7 @@ router.get('/profile', async (req, res) => {
     }
 });
 
-router.get('/search', async (req, res) => {
+router.get('/search', withAuth, async (req, res) => {
     try {
         if (req.session.loggedIn) {
             res.render('search')
