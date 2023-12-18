@@ -1,7 +1,7 @@
 <div class="UserName">
   {{#if loggedIn}}
   <section class="user">
-    <h2>Welcome!!</h2>
+    <h2>{{user.username}}</h2>
     <p id="profileCertifications">Certifications: {{user.certifications}}</p>
     <p id="profileCertifications">Gas Mixes: {{user.gas_mixes}}</p>
     <p>Total Dives: {{user.ow_dive_totals}}</p>
@@ -14,11 +14,11 @@
   {{/if}}
 </div>
 
-{{#if threads.length}}
+{{#if user.threads.length}}
 <div class="col-md-6 project-list">
-  <h3>Current Threads:</h3>
+  <h3>Comments:</h3>
 
-  {{#each threads as |thread|}}
+  {{#each user.threads as |thread|}}
   <div class="row mb-2">
     <div class="col-md-8">
       <h4>{{thread.comment}}</h4>

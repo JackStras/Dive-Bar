@@ -14,14 +14,14 @@
   {{/if}}
 </div>
 
-{{#if threads.length}}
+{{#if user.threads.length}}
 <div class="col-md-6 project-list">
   <h3>Current Threads:</h3>
 
-  {{#each threads as |thread|}}
+  {{#each user.threads as |thread|}}
   <div class="row mb-2">
     <div class="col-md-8">
-      <div>{{thread.id}}"</div>
+      <div>{{thread.comment}}"</div>
     </div>
     <div class="col-md-4">
       <button class="btn btn-sm btn-danger" data-id={{thread.comment}}>DELETE</button>
