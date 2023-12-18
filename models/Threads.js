@@ -15,6 +15,14 @@ Threads.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        poster: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        poster_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

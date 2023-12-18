@@ -7,9 +7,13 @@ let commentEventHandler = async (event) => {
     
 
     const userId = document.getElementById('userComment').dataset.userid;
-
+    const loggedUsername = document.getElementById('loggedInUser').dataset.loggeduser
+    const loggedId = document.getElementById('loggedUserId').dataset.loggedid
     const data = {
-        comment: commentVal
+        comment: commentVal,
+        poster: loggedUsername,
+        poster_id: loggedId,
+        user_id: userId
     };
     const response = await fetch('/api/users/comments', {
         method: 'POST',

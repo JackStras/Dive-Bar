@@ -55,10 +55,17 @@ router.get('/user_profile/:id', withAuth, async (req, res) => {
             include: [{model: Threads}],
         })
 
+        const logged_in_data = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password']}
+        })
+
+        const logged_user = logged_in_data.get({ plain: true })
+
         const user = userData.get({ plain: true });
         console.log(user)
         res.render('user_profile', {
             user,
+            logged_user,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
