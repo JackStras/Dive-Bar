@@ -1,10 +1,10 @@
 <h1>Enter your certifications, dive experience, and proficiencies!</h1>
 <h2>{{username}}</h2>
-<div class ="row justify-space-between-md">
+<div class="row justify-space-between-md">
     <form class="form edit-form">
         <label for="ow_input">Dive Total:</label>
         <input class="form-input" type="text" value="{{ow_dive_totals}}" id="ow-dive-form">
-        
+
         <label for="certifications">Select your certifications: </label>
         <select multiple id="certification-form">
             {{!-- <option value="none" selected disabled hidden>Select an Option</option> --}}
@@ -58,65 +58,74 @@
             <option selected value="false">False</option>
         </select>
         <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+<form action="/users/photo" enctype="multipart/form-data" method="post">
+  <div class="form-group">
+    <input type="file" class="form-control-file" name="uploaded_file" id="photoUploader">
+    <input type="submit" value="Submit!" class="btn btn-default">            
+  </div>
+</form>
 
 <p id="paragraph" data-userId="{{id}}"></p>
 
 <script src="/js/edit.js"></script>
 
 
-  {{!-- CSS for Profile Settings
-  body {
-    padding-left: 11em;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    color: rgb(170, 198, 211);
-    background-image: url('BG2.png');
-    margin: 0;
+{{!-- CSS for Profile Settings
+body {
+padding-left: 11em;
+font-family: Georgia, "Times New Roman", Times, serif;
+color: rgb(170, 198, 211);
+background-image: url('BG2.png');
+margin: 0;
 }
 .profile-edit {
-    width: 60%;
-    margin: 20px auto;
-    background-color: #004D40;
-    border-radius: 10px;
-    overflow: hidden;
+width: 60%;
+margin: 20px auto;
+background-color: #004D40;
+border-radius: 10px;
+overflow: hidden;
 }
 .profile-edit .heading {
-    margin-top: 0;
-    padding: 8px 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
-    color: #FFFFFF;
-    background: #004D40 no-repeat center bottom;
+margin-top: 0;
+padding: 8px 15px;
+text-transform: uppercase;
+letter-spacing: 2px;
+font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
+color: #FFFFFF;
+background: #004D40 no-repeat center bottom;
 }
 .profile-edit .content {
-    margin: 0;
-    padding: 10px;
+margin: 0;
+padding: 10px;
 }
 .profile-edit label {
-    display: block;
-    margin-bottom: 5px;
-    color: #FFFFFF;
+display: block;
+margin-bottom: 5px;
+color: #FFFFFF;
 }
 .profile-edit input,
 .profile-edit textarea,
 .profile-edit select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+box-sizing: border-box;
 }
 .profile-edit textarea {
-    resize: vertical;
-    align-items: center;
+resize: vertical;
+align-items: center;
 }
 #footer {
-    border-top: 1px dotted #004D40;
-    font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
-    color: white;
-    margin-top: auto;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+border-top: 1px dotted #004D40;
+font: normal .8em Tahoma, Arial, Helvetica, sans-serif;
+color: white;
+margin-top: auto;
+padding: 10px;
+text-align: center;
+position: fixed;
+bottom: 0;
+width: 100%;
 } --}}

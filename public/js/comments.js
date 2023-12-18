@@ -1,5 +1,3 @@
-console.log('script loaded')
-
 let commentEventHandler = async (event) => {
     event.preventDefault();
 
@@ -9,7 +7,8 @@ let commentEventHandler = async (event) => {
     const userId = document.getElementById('userComment').dataset.userid;
 
     const data = {
-        comment: commentVal
+        comment: commentVal,
+        user_id: userId
     };
     const response = await fetch('/api/users/comments', {
         method: 'POST',
