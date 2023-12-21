@@ -16,22 +16,29 @@ header {
 }
 
 .boxed {
+    display: flex;
+    flex-direction: row;
     float: left;
     clear: left;
-    width: 200px;
+    width: 750px;
     margin: 0 0 10px 0;
     padding: 0;
 }
 
 .boxed .heading {
     margin-top: 0;
+
     padding: 8px 15px;
+    padding-top: 13px;
+    padding-left: 20px;
     background: rgb(73, 187, 187) no-repeat center bottom;
     text-transform: uppercase;
     letter-spacing: 2px;
     font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
     color: #FFFFFF;
     border-radius: 8px;
+    max-height: 75px;
+    width: 200px;
 }
 
 .boxed .content {
@@ -166,11 +173,9 @@ header {
     opacity: 85%;
     color: black;
     text-shadow: none;
-    /* max-width: 25%; */
     border-radius: 8px;
     float: none;
     clear: none;
-    width: 500px;
 }
 
 .usernameDiv {
