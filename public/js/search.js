@@ -6,6 +6,7 @@ const displayMatchingUsers = (users) => {
     // Iterate through the users and create elements to display the data
     users.forEach(user => {
         const userElement = document.createElement('div');
+        userElement.className = 'userElement'
 
         // Convert boolean values to Yes/No
         const photographyValue = user.photography ? '✅' : '❌';
@@ -16,6 +17,7 @@ const displayMatchingUsers = (users) => {
 
         // Create separate divs for each value
         const usernameDiv = document.createElement('div');
+        usernameDiv.className = 'usernameDiv'
         usernameDiv.textContent = `Username: ${user.username}`;
         usernameDiv.addEventListener('click', function() {
             document.location.replace(`user_profile/${user.id}`)

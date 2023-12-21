@@ -1,14 +1,14 @@
-  <nav class="topnav" id="Topnav">
-  <a href="./profile">Profile</a>
-  <a href="./search">Dive Buddies</a>
-  <a href="./edit">Edit Profile</a>
-  <a href="./homepage" class="no-button" id="logout">Logout</a>
-  </nav>
+<nav class="topnav" id="Topnav">
+    <a href="./profile">Profile</a>
+    <a href="./search">Dive Buddies</a>
+    <a href="./edit">Edit Profile</a>
+    <a href="./homepage" class="no-button" id="logout">Logout</a>
+</nav>
 
 <div id="search" class="boxed">
     <h2 class="heading">Find your dive buddy!</h2>
     <div class="content">
-        <form method="get" action="#" class="form">
+        <form method="get" action="#" class="form buddy-search">
             <div>
                 <input type="text" id="ow-dive-form" name="search-input" placeholder="Number of Dives..." />
 
@@ -53,13 +53,14 @@
             </div>
     </div>
     </form>
+    <div id="matching-users-container"></div>
 </div>
 
 <div class="search-results">
 
 </div>
 
-<div id="matching-users-container"></div>
+
 
 <script src="./js/search.js"></script>
 <script src="./js/logout.js"></script>
