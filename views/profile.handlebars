@@ -19,14 +19,15 @@
 
 
 
-<form id="commentForm">
+
+  {{#if user.threads.length}}
+  <form id="commentForm">
   <div class="col-md-6 comments" id="comments">
     <h2>Continue the conversation by leaving a reply!</h2>
     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
       id="dialogue">
   </div>
   <input class="btn btn-primary" type="submit" value="Comment" id="submitComment">
-  {{#if user.threads.length}}
   <h3>Comments:</h3>
   {{#each user.threads as |thread|}}
   <ul class="list-group">
