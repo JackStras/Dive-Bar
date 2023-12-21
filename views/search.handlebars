@@ -10,7 +10,8 @@
     <div class="content">
         <form method="get" action="#" class="form buddy-search">
             <div>
-                <input type="text" id="ow-dive-form" name="search-input" placeholder="Number of Dives..." />
+                <input type="text" id="ow-dive-form" name="search-input" class="totaldives"
+                    placeholder="Number of Dives..." />
 
                 <form method="get" action="#">
                     <div>
@@ -19,24 +20,28 @@
                         </label>
                         <label for="check2"><input type="checkbox" id="efr-form" name="Active EFR"> Active Emergencry
                             first responder</label>
+                        <span class="checkmark"></span>         
                         <label for="check4"><input type="checkbox" id="O2-form" name="Active O2"> Active O2
                             Provider</label>
+                        <span class="checkmark"></span>
                         <label for="check5"><input type="checkbox" id="dm-form" name="Active DM"> Active Dive
                             Master</label>
+                        <span class="checkmark"></span>
                         <label for="check6"><input type="checkbox" id="instructor-form" name="Active Instructor"> Active
                             Instructor</label>
+                        <span class="checkmark"></span>
 
                     </div>
 
                     <label for="dropdown1">Gas Mixes</label>
-                    <select id="gas-mixes-form" name="dropdown1">
+                    <select id="gas-mixes-form" name="dropdown1" class="drop-down">
                         <option value="Air">Air</option>
                         <option value="Nitrox">Nitrox</option>
                         <option value="Tri-Mix"> Tri-Mix</option>
                     </select>
 
                     <label for="dropdown3">Certifications:</label>
-                    <select id="certification-form" name="dropdown3">
+                    <select id="certification-form" name="dropdown3" class="drop-down">
                         <option value="Open Water">Open Water</option>
                         <option value="Advanced Open Water">Advanced Open Water</option>
                         <option value="Dive Master">Dive Master</option>

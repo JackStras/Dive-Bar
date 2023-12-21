@@ -26,11 +26,12 @@
  .boxed .heading {
      margin-top: 0;
      padding: 8px 15px;
-     background: #004D40 no-repeat center bottom;
+     background: rgb(73, 187, 187) no-repeat center bottom;
      text-transform: uppercase;
      letter-spacing: 2px;
      font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
      color: #FFFFFF;
+     border-radius: 8px;
  }
 
  .boxed .content {
@@ -54,15 +55,27 @@
      width: 100%;
      padding: 0.5em;
      margin-bottom: 10px;
+     background-color: lightblue;
+ }
+
+ .drop-down {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ .totaldives {
+    background-color: lightblue;
+    border-radius: 8px;
  }
 
  .topnav {
-     background-color: white;
      overflow: hidden;
      position: fixed;
      top: 0;
      right: 0;
      width: 200px;
+     background-color: lightblue;
+     border-radius: 8px;
  }
 
  .topnav a {
@@ -75,6 +88,7 @@
      font: bold 1em Tahoma, Arial, Helvetica, sans-serif;
      border: 1px solid black;
      opacity: 60%;
+     border-radius: 8px;
  }
 
  .topnav a:hover {
@@ -92,6 +106,9 @@
      text-align: center;
  }
 
+ .checkmark {
+    color: lightblue;
+ }
 
  #footer {
      border-top: 1px dotted #004D40;
@@ -108,8 +125,6 @@
      text-shadow: 2px 2px black;
  }
 
-
-
  .input-group-text {
      text-shadow: none;
  }
@@ -117,6 +132,7 @@
  .list-group-item {
      text-shadow: none;
      max-width: 50%;
+     background-color: lightblue;
  }
 
  .custom_li {
@@ -142,7 +158,7 @@
      flex-wrap: wrap;
      align-content: space-around;
      align-items: center;
-     background-color: white;
+     background-color: lightblue;
      opacity: 85%;
      color: black;
      text-shadow: none;
@@ -155,4 +171,50 @@
 
  .usernameDiv {
      color: blue;
+ }
+
+ #certification-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #ow-dive-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ .userNameField {
+    color: rgb(46, 220, 220);
+    text-shadow: 2px 2px rgb(16, 134, 134);
+    font-size: 3rem;
+ }
+
+ #gas-mixes-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #photography-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #efr-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #O2-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #dm-form {
+    background-color: lightblue;
+    border-radius: 8px;
+ }
+
+ #instructor-form {
+    background-color: lightblue;
+    border-radius: 8px;
  }
