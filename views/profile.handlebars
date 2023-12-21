@@ -1,7 +1,9 @@
 <div class="UserName">
   {{#if loggedIn}}
   <ul class="list-group">
-    <li class="list-group-item custom_li"><h2>Welcome, {{user.username}}!</h2></li>
+    <li class="list-group-item custom_li">
+      <h1>{{user.username}}</h1>
+    </li>
     <li class="list-group-item custom_li">Certifications: {{user.certifications}}</li>
     <li class="list-group-item custom_li">Gas Mixes: {{user.gas_mixes}}</li>
     <li class="list-group-item custom_li">Total Dives: {{user.ow_dive_totals}}</li>
@@ -16,21 +18,34 @@
 
 
 
-{{#if user.threads.length}}
-<div class="col-md-6 comments">
-  <h3>Comments:</h3>
 
+<form id="commentForm">
+  <div class="col-md-6 comments" id="comments">
+    <h2>Continue the conversation by leaving a reply!</h2>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+      id="dialogue">
+  </div>
+  <input class="btn btn-primary" type="submit" value="Comment" id="submitComment">
+  {{#if user.threads.length}}
+  <h3>Comments:</h3>
   {{#each user.threads as |thread|}}
   <ul class="list-group">
+    <a href="/user_profile/{{thread.poster_id}}">{{thread.poster}}</a>
     <li class="list-group-item">{{thread.comment}}
       <div class="input-group input-group-lg">
         <span class="input-group-text" id="inputGroup-sizing-lg"></span>
         <input type="text" class="form-control" aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-lg">
-        <input class="btn btn-primary" type="submit" value="Reply">
       </div>
     </li>
   </ul>
-  {{/each}}
-</div>
+</form>
+{{/each}}
+
+
 {{/if}}
+
+<p id="userComment" data-userId="{{user.id}}"></p>
+<p id="loggedInUser" data-loggedUser="{{user.username}}"></p>
+<p id="loggedUserId" data-loggedId="{{user.id}}"></p>
+<script src="/js/comments.js"></script>
