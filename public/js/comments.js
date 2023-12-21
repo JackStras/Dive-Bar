@@ -2,7 +2,7 @@ let commentEventHandler = async (event) => {
     event.preventDefault();
 
     let commentVal = document.querySelector('#dialogue').value.trim();
-    
+
 
     const userId = document.getElementById('userComment').dataset.userid;
     const loggedUsername = document.getElementById('loggedInUser').dataset.loggeduser
@@ -27,15 +27,9 @@ let commentEventHandler = async (event) => {
     }
 };
 
+
+
 document
     .querySelector('#commentForm')
     .addEventListener('submit', commentEventHandler)
 
-// const reply = document.getElementsByTagName('button')
-
-// const replyHandler = (comments) => {
-// }
-
-// for (let i = 0; i < buttons.length; i++) {
-//     buttons[i].addEventListener('click', replyHandler)
-// }
