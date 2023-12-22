@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Threads } = require('../../models');
 const { Op } = require('sequelize')
 const withAuth = require('../../utils/auth');
+const chalk = require('chalk');
 
 
 router.post('/', withAuth, async (req, res) => {
