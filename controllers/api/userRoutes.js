@@ -98,9 +98,10 @@ router.post('/comments', withAuth, async (req, res) => {
                     id: req.body.user_id
                 }
             })
-        res.status(200).json(commentData)
+            console.log(chalk.green.bold("Comment data retrieved from DB", commentData))
+        res.status(200).json(chalk.blue.bold("New thread data", commentData))
     } catch (err) {
-        console.log(err)
+        console.log(chalk.red.bold("Error message", err))
         res.status(500).json(err)
     }
 })

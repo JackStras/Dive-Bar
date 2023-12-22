@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Threads } = require('../models');
 const withAuth = require('../utils/auth');
 const { Op } = require('sequelize');
+const chalk = require('chalk');
 
 // redner homepage if signed in
 router.get('/', async (req, res) => {
@@ -62,7 +63,7 @@ router.get('/user_profile/:id', withAuth, async (req, res) => {
         const logged_user = logged_in_data.get({ plain: true })
 
         const user = userData.get({ plain: true });
-        console.log(user)
+        console.log(chalk.green.bold("User info", user))
         res.render('user_profile', {
             user,
             logged_user,
@@ -80,6 +81,7 @@ router.get('/edit', withAuth, async (req, res) => {
         })
 
         const user = userData.get({ plain: true })
+        console.log(chalk.green.bold("User info", user))
 
         if (req.session.loggedIn) {
             res.render('edit', {
